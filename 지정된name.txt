@@ -1,0 +1,31 @@
+*기본적인 버튼*
+커피 버튼 btn_coffee
+에이드/차 버튼 btn_ade
+스무디 버튼 btn_smoo
+디저트 버튼 btn_desert
+< 버튼 btn_left
+> 버튼 btn_right
+이전 버튼 btn_before
+다음 버튼 btn_next
+설정 버튼 btn_option
+전체 취소 btn_cancel
+결제하기 btn_sell
+
+*리스트박스*
+구매내역 리스트 list_purchase
+
+*텍스트박스*
+수량 tb_num
+총금액 tb_amount
+
+*커피*
+에스프레소 coffee_es
+아메리카노 coffee_ame
+카페라떼 coffee_clatte
+카푸치노 coffee_capu
+카라멜마끼아또 coffee_macci
+바닐라라떼 coffee_vanila
+카페모카 coffee_moca
+아이스크림라떼 coffee_icecream
+
+*에이드/차*
