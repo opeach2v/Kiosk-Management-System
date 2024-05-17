@@ -42,20 +42,25 @@
             this.btn_option = new System.Windows.Forms.Button();
             this.bttab = new System.Windows.Forms.TabControl();
             this.tab_coffee = new System.Windows.Forms.TabPage();
+            this.coffee_icecream = new System.Windows.Forms.Button();
+            this.coffee_moca = new System.Windows.Forms.Button();
+            this.coffee_vanila = new System.Windows.Forms.Button();
+            this.coffee_macci = new System.Windows.Forms.Button();
+            this.coffee_capu = new System.Windows.Forms.Button();
+            this.coffee_latte = new System.Windows.Forms.Button();
+            this.coffee_ame = new System.Windows.Forms.Button();
+            this.coffee_es = new System.Windows.Forms.Button();
+            this.tab_noncoffee = new System.Windows.Forms.TabPage();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.tab_ade = new System.Windows.Forms.TabPage();
+            this.button11 = new System.Windows.Forms.Button();
             this.tab_smoo = new System.Windows.Forms.TabPage();
             this.tab_desert = new System.Windows.Forms.TabPage();
-            this.tab_noncoffee = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.bttab.SuspendLayout();
             this.tab_coffee.SuspendLayout();
+            this.tab_noncoffee.SuspendLayout();
+            this.tab_ade.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
@@ -225,14 +230,14 @@
             // 
             this.tab_coffee.AutoScroll = true;
             this.tab_coffee.BackColor = System.Drawing.Color.White;
-            this.tab_coffee.Controls.Add(this.button1);
-            this.tab_coffee.Controls.Add(this.button2);
-            this.tab_coffee.Controls.Add(this.button3);
-            this.tab_coffee.Controls.Add(this.button4);
-            this.tab_coffee.Controls.Add(this.button5);
-            this.tab_coffee.Controls.Add(this.button6);
-            this.tab_coffee.Controls.Add(this.button7);
-            this.tab_coffee.Controls.Add(this.button8);
+            this.tab_coffee.Controls.Add(this.coffee_icecream);
+            this.tab_coffee.Controls.Add(this.coffee_moca);
+            this.tab_coffee.Controls.Add(this.coffee_vanila);
+            this.tab_coffee.Controls.Add(this.coffee_macci);
+            this.tab_coffee.Controls.Add(this.coffee_capu);
+            this.tab_coffee.Controls.Add(this.coffee_latte);
+            this.tab_coffee.Controls.Add(this.coffee_ame);
+            this.tab_coffee.Controls.Add(this.coffee_es);
             this.tab_coffee.Font = new System.Drawing.Font("나눔스퀘어 네오 ExtraBold", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.tab_coffee.Location = new System.Drawing.Point(4, 54);
             this.tab_coffee.Name = "tab_coffee";
@@ -241,8 +246,151 @@
             this.tab_coffee.TabIndex = 0;
             this.tab_coffee.Text = "커피";
             // 
+            // coffee_icecream
+            // 
+            this.coffee_icecream.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.coffee_icecream.Image = global::Kiosk_Management_System.Properties.Resources.기본2;
+            this.coffee_icecream.Location = new System.Drawing.Point(211, 435);
+            this.coffee_icecream.Name = "coffee_icecream";
+            this.coffee_icecream.Size = new System.Drawing.Size(189, 207);
+            this.coffee_icecream.TabIndex = 23;
+            this.coffee_icecream.Text = "아이스크림라떼\r\n5000원";
+            this.coffee_icecream.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.coffee_icecream.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.coffee_icecream.UseVisualStyleBackColor = true;
+            // 
+            // coffee_moca
+            // 
+            this.coffee_moca.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.coffee_moca.Image = global::Kiosk_Management_System.Properties.Resources.기본2;
+            this.coffee_moca.Location = new System.Drawing.Point(16, 435);
+            this.coffee_moca.Name = "coffee_moca";
+            this.coffee_moca.Size = new System.Drawing.Size(189, 207);
+            this.coffee_moca.TabIndex = 24;
+            this.coffee_moca.Text = "카페모카\r\n4200원";
+            this.coffee_moca.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.coffee_moca.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.coffee_moca.UseVisualStyleBackColor = true;
+            // 
+            // coffee_vanila
+            // 
+            this.coffee_vanila.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.coffee_vanila.Image = global::Kiosk_Management_System.Properties.Resources.기본2;
+            this.coffee_vanila.Location = new System.Drawing.Point(406, 222);
+            this.coffee_vanila.Name = "coffee_vanila";
+            this.coffee_vanila.Size = new System.Drawing.Size(189, 207);
+            this.coffee_vanila.TabIndex = 20;
+            this.coffee_vanila.Text = "바닐라라떼\r\n4000원";
+            this.coffee_vanila.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.coffee_vanila.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.coffee_vanila.UseVisualStyleBackColor = true;
+            // 
+            // coffee_macci
+            // 
+            this.coffee_macci.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.coffee_macci.Image = global::Kiosk_Management_System.Properties.Resources.카라멜마끼아또;
+            this.coffee_macci.Location = new System.Drawing.Point(211, 222);
+            this.coffee_macci.Name = "coffee_macci";
+            this.coffee_macci.Size = new System.Drawing.Size(189, 207);
+            this.coffee_macci.TabIndex = 21;
+            this.coffee_macci.Text = "카라멜마끼아또\r\n4000원";
+            this.coffee_macci.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.coffee_macci.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.coffee_macci.UseVisualStyleBackColor = true;
+            // 
+            // coffee_capu
+            // 
+            this.coffee_capu.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.coffee_capu.Image = global::Kiosk_Management_System.Properties.Resources.카푸치노;
+            this.coffee_capu.Location = new System.Drawing.Point(16, 222);
+            this.coffee_capu.Name = "coffee_capu";
+            this.coffee_capu.Size = new System.Drawing.Size(189, 207);
+            this.coffee_capu.TabIndex = 22;
+            this.coffee_capu.Text = "카푸치노\r\n3000원";
+            this.coffee_capu.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.coffee_capu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.coffee_capu.UseVisualStyleBackColor = true;
+            // 
+            // coffee_latte
+            // 
+            this.coffee_latte.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.coffee_latte.Image = global::Kiosk_Management_System.Properties.Resources.카페라떼;
+            this.coffee_latte.Location = new System.Drawing.Point(406, 9);
+            this.coffee_latte.Name = "coffee_latte";
+            this.coffee_latte.Size = new System.Drawing.Size(189, 207);
+            this.coffee_latte.TabIndex = 17;
+            this.coffee_latte.Text = "카페라떼\r\n2800원";
+            this.coffee_latte.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.coffee_latte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.coffee_latte.UseVisualStyleBackColor = true;
+            // 
+            // coffee_ame
+            // 
+            this.coffee_ame.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.coffee_ame.Image = global::Kiosk_Management_System.Properties.Resources.기본2;
+            this.coffee_ame.Location = new System.Drawing.Point(211, 9);
+            this.coffee_ame.Name = "coffee_ame";
+            this.coffee_ame.Size = new System.Drawing.Size(189, 207);
+            this.coffee_ame.TabIndex = 18;
+            this.coffee_ame.Text = "아메리카노\r\n1800원";
+            this.coffee_ame.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.coffee_ame.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.coffee_ame.UseVisualStyleBackColor = true;
+            // 
+            // coffee_es
+            // 
+            this.coffee_es.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.coffee_es.Image = global::Kiosk_Management_System.Properties.Resources.에스프레소;
+            this.coffee_es.Location = new System.Drawing.Point(16, 9);
+            this.coffee_es.Name = "coffee_es";
+            this.coffee_es.Size = new System.Drawing.Size(189, 207);
+            this.coffee_es.TabIndex = 19;
+            this.coffee_es.Text = "에스프레소\r\n1300원";
+            this.coffee_es.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.coffee_es.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.coffee_es.UseVisualStyleBackColor = true;
+            // 
+            // tab_noncoffee
+            // 
+            this.tab_noncoffee.Controls.Add(this.button10);
+            this.tab_noncoffee.Controls.Add(this.button9);
+            this.tab_noncoffee.Location = new System.Drawing.Point(4, 54);
+            this.tab_noncoffee.Name = "tab_noncoffee";
+            this.tab_noncoffee.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_noncoffee.Size = new System.Drawing.Size(609, 651);
+            this.tab_noncoffee.TabIndex = 4;
+            this.tab_noncoffee.Text = "논커피";
+            this.tab_noncoffee.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button10.Image = global::Kiosk_Management_System.Properties.Resources.기본2;
+            this.button10.Location = new System.Drawing.Point(211, 9);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(189, 207);
+            this.button10.TabIndex = 1;
+            this.button10.Text = "녹차라떼\r\n3200원";
+            this.button10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            this.button9.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button9.Image = global::Kiosk_Management_System.Properties.Resources.초코라떼;
+            this.button9.Location = new System.Drawing.Point(16, 9);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(189, 207);
+            this.button9.TabIndex = 0;
+            this.button9.Text = "초코라떼\r\n3000원";
+            this.button9.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button9.UseVisualStyleBackColor = true;
+            // 
             // tab_ade
             // 
+            this.tab_ade.Controls.Add(this.button11);
             this.tab_ade.Location = new System.Drawing.Point(4, 54);
             this.tab_ade.Name = "tab_ade";
             this.tab_ade.Padding = new System.Windows.Forms.Padding(3);
@@ -250,6 +398,16 @@
             this.tab_ade.TabIndex = 1;
             this.tab_ade.Text = "에이드/차";
             this.tab_ade.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            this.button11.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button11.Location = new System.Drawing.Point(14, 16);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(152, 150);
+            this.button11.TabIndex = 0;
+            this.button11.Text = "button11";
+            this.button11.UseVisualStyleBackColor = true;
             // 
             // tab_smoo
             // 
@@ -270,120 +428,6 @@
             this.tab_desert.TabIndex = 3;
             this.tab_desert.Text = "디저트";
             this.tab_desert.UseVisualStyleBackColor = true;
-            // 
-            // tab_noncoffee
-            // 
-            this.tab_noncoffee.Location = new System.Drawing.Point(4, 54);
-            this.tab_noncoffee.Name = "tab_noncoffee";
-            this.tab_noncoffee.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_noncoffee.Size = new System.Drawing.Size(609, 651);
-            this.tab_noncoffee.TabIndex = 4;
-            this.tab_noncoffee.Text = "논커피";
-            this.tab_noncoffee.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Image = global::Kiosk_Management_System.Properties.Resources.기본2;
-            this.button1.Location = new System.Drawing.Point(211, 435);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(189, 207);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "아이스크림라떼\r\n5000원";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button2.Image = global::Kiosk_Management_System.Properties.Resources.기본2;
-            this.button2.Location = new System.Drawing.Point(16, 435);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(189, 207);
-            this.button2.TabIndex = 24;
-            this.button2.Text = "카페모카\r\n4200원";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button3.Image = global::Kiosk_Management_System.Properties.Resources.기본2;
-            this.button3.Location = new System.Drawing.Point(406, 222);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(189, 207);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "바닐라라떼\r\n4000원";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button4.Image = global::Kiosk_Management_System.Properties.Resources.카라멜마끼아또;
-            this.button4.Location = new System.Drawing.Point(211, 222);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(189, 207);
-            this.button4.TabIndex = 21;
-            this.button4.Text = "카라멜마끼아또\r\n4000원";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button5.Image = global::Kiosk_Management_System.Properties.Resources.카푸치노;
-            this.button5.Location = new System.Drawing.Point(16, 222);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(189, 207);
-            this.button5.TabIndex = 22;
-            this.button5.Text = "카푸치노\r\n3000원";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button6.Image = global::Kiosk_Management_System.Properties.Resources.카페라떼;
-            this.button6.Location = new System.Drawing.Point(406, 9);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(189, 207);
-            this.button6.TabIndex = 17;
-            this.button6.Text = "카페라떼\r\n2800원";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button7.Image = global::Kiosk_Management_System.Properties.Resources.기본2;
-            this.button7.Location = new System.Drawing.Point(211, 9);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(189, 207);
-            this.button7.TabIndex = 18;
-            this.button7.Text = "아메리카노\r\n1800원";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button8.Image = global::Kiosk_Management_System.Properties.Resources.에스프레소;
-            this.button8.Location = new System.Drawing.Point(16, 9);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(189, 207);
-            this.button8.TabIndex = 19;
-            this.button8.Text = "에스프레소\r\n1300원";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button8.UseVisualStyleBackColor = true;
             // 
             // MainForm1
             // 
@@ -408,6 +452,8 @@
             this.Text = "2CAFE-Kiosk";
             this.bttab.ResumeLayout(false);
             this.tab_coffee.ResumeLayout(false);
+            this.tab_noncoffee.ResumeLayout(false);
+            this.tab_ade.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -433,14 +479,17 @@
         private System.Windows.Forms.TabPage tab_smoo;
         private System.Windows.Forms.TabPage tab_desert;
         private System.Windows.Forms.TabPage tab_noncoffee;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button coffee_icecream;
+        private System.Windows.Forms.Button coffee_moca;
+        private System.Windows.Forms.Button coffee_vanila;
+        private System.Windows.Forms.Button coffee_macci;
+        private System.Windows.Forms.Button coffee_capu;
+        private System.Windows.Forms.Button coffee_latte;
+        private System.Windows.Forms.Button coffee_ame;
+        private System.Windows.Forms.Button coffee_es;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
     }
 }
 

@@ -93,6 +93,16 @@ namespace Kiosk_Management_System.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap 초코라떼 {
+            get {
+                object obj = ResourceManager.GetObject("초코라떼", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap 카라멜마끼아또 {
             get {
                 object obj = ResourceManager.GetObject("카라멜마끼아또", resourceCulture);
