@@ -1,13 +1,14 @@
+@@@ MainForm @@@
+*탭*
+커피 탭 tab_coffee
+논커피 탭 tab_noncoffee
+에이드/차 탭 tab_ade
+스무디 탭 tab_smoo
+디저트 탭 tab_desert
+
 *기본적인 버튼*
-커피 버튼 btn_coffee
-에이드/차 버튼 btn_ade
-스무디 버튼 btn_smoo
-디저트 버튼 btn_desert
-< 버튼 btn_left
-> 버튼 btn_right
-이전 버튼 btn_before
-다음 버튼 btn_next
 설정 버튼 btn_option
+선택 취소 btn_partcancel
 전체 취소 btn_cancel
 결제하기 btn_sell
 
@@ -29,3 +30,8 @@
 아이스크림라떼 coffee_icecream
 
 *에이드/차*
+
+
+@@@ OptionPasswordForm @@@
+비밀번호 텍스트박스 tb_password
+로그인 btn_login
