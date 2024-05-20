@@ -23,6 +23,8 @@ namespace Kiosk_Management_System
 
         private void PointForm_Load(object sender, EventArgs e)
         {
+            tb_telnum.Mask = "000-0000-0000";
+
             connStr = "Server = localhost\\SQLEXPRESS;Database = CafeDB;Trusted_Connection = True;";
             conn = new SqlConnection(connStr);
             conn.Open();
@@ -40,22 +42,14 @@ namespace Kiosk_Management_System
                 return;
             }
             
-            // 문자가 포함되었을 경우
-            if(ContainsNonNumeric(tb_telnum.Text)) //문자가 포함됐는지 확인
-            { 
-                MessageBox.Show("숫자만 입력해주세요.");
-                return;
-            }
-
-            // 숫자만 입력된 경우
-                // 입력한 번호가 데이터베이스에 존재하지 않을 때 회원등록폼으로 이동하고 this.Close();
-                    // this.Close();로 하는 이유: 등록폼에서 정상적으로 등록된 뒤 다시 조회하는 과정을 거쳐야 함.
-                // 입력한 번호가 데이터베이스에 존재할 때 밑에 코드 실행
+            // 입력한 번호가 데이터베이스에 존재하지 않을 때 회원등록폼으로 이동하고 this.Close();
+            // this.Close();로 하는 이유: 등록폼에서 정상적으로 등록된 뒤 다시 조회하는 과정을 거쳐야 함.
+             // 입력한 번호가 데이터베이스에 존재할 때 밑에 코드 실행
             else
             {
                 string db_telnum;
 
-                cmd.CommandText = "SELECT * FROM member";
+                cmd.CommandText = "SELECT * FROM customer";
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 
@@ -67,7 +61,7 @@ namespace Kiosk_Management_System
             return;
         }
 
-        // 입력된 텍스트에 문자가 포함되어 있는지 검사하는 코드
+        /* 입력된 텍스트에 문자가 포함되어 있는지 검사하는 코드
         private bool ContainsNonNumeric(string text)
         {
             foreach (char c in text)
@@ -75,6 +69,6 @@ namespace Kiosk_Management_System
                 if (!char.IsDigit(c)) { return true; }
             }
             return false;
-        }
+        }*/
     }
 }

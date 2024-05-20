@@ -43,5 +43,10 @@ namespace Kiosk_Management_System
             MessageBox.Show("회원 등록을 취소합니다.");
             return;
         }
+
+        private void NewCustomerForm_Load(object sender, EventArgs e)
+        {
+            tb_telnum.Mask = "000-0000-0000";
+        }
     }
 }

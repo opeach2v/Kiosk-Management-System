@@ -164,7 +164,7 @@ namespace Kiosk_Management_System
 
         private void coffee_es_Click(object sender, EventArgs e)
         {
-            /* if (isFirstClick)
+            if (isFirstClick)
             {
                 ListViewItem es = new ListViewItem(new string[] { "에스프레소   ", es_count.ToString(), es_price.ToString() });
                 list_purchase.Items.Add(es);
@@ -175,7 +175,7 @@ namespace Kiosk_Management_System
             count_total++;
             es_price += 1300;
             price_total += 1300;
-            totalRefresh(); */
+            totalRefresh();
         }
 
         private void coffee_ame_Click(object sender, EventArgs e)

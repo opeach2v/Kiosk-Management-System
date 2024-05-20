@@ -28,26 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tb_telnum = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_ok = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_cancel = new System.Windows.Forms.Button();
+            this.tb_telnum = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
-            // 
-            // tb_telnum
-            // 
-            this.tb_telnum.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tb_telnum.Location = new System.Drawing.Point(255, 129);
-            this.tb_telnum.Name = "tb_telnum";
-            this.tb_telnum.Size = new System.Drawing.Size(256, 32);
-            this.tb_telnum.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(70, 132);
+            this.label1.Location = new System.Drawing.Point(80, 131);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(156, 26);
             this.label1.TabIndex = 2;
@@ -88,16 +80,24 @@
             this.btn_cancel.UseVisualStyleBackColor = false;
             this.btn_cancel.Click += new System.EventHandler(this.btn_ok_Click);
             // 
+            // tb_telnum
+            // 
+            this.tb_telnum.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tb_telnum.Location = new System.Drawing.Point(272, 127);
+            this.tb_telnum.Name = "tb_telnum";
+            this.tb_telnum.Size = new System.Drawing.Size(224, 30);
+            this.tb_telnum.TabIndex = 5;
+            // 
             // PointForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(578, 274);
+            this.Controls.Add(this.tb_telnum);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.btn_ok);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tb_telnum);
             this.Name = "PointForm";
             this.Text = "포인트 사용/조회";
             this.Load += new System.EventHandler(this.PointForm_Load);
@@ -107,10 +107,10 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox tb_telnum;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_ok;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_cancel;
+        private System.Windows.Forms.MaskedTextBox tb_telnum;
     }
 }
