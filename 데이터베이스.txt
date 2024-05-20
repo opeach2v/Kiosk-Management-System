@@ -1,0 +1,17 @@
+optionForm 들어갈 내용
+
+* 버튼1 - 월별 총 금액
+* 버튼2 - 데이터베이스(총 금액, 총 판매수, 종류, 품목별 수량)
+     -> 추가(음료)/ 삭제(음료) / 종류별로 음료수(선택)
+
+
+
+@@@ 데이터베이스 테이블 @@@
+coffeeMenu(cate CHAR(10), name CHAR(15), num INT, price INT)
+noncoffeeMenu(")
+adeMenu(")
+smooMenu(")
+desertMenu(")
+customer(telnum INT, point INT, id INT)
+
+

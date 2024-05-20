@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="기본2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\기본2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="카푸치노" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\카푸치노.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -130,13 +133,22 @@
   <data name="설정" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\설정.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="초코스무디" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\초코스무디.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="카라멜마끼아또" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\카라멜마끼아또.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="기본2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\기본2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="딸기에이드" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\딸기에이드.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="초코라떼" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\초코라떼.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="레몬에이드" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\레몬에이드.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="설정1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\설정1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

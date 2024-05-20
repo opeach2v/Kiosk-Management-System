@@ -28,72 +28,95 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_credit = new System.Windows.Forms.Button();
+            this.btn_cash = new System.Windows.Forms.Button();
+            this.btn_easy = new System.Windows.Forms.Button();
+            this.btn_point = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // btn_credit
             // 
-            this.button1.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(261, 49);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 92);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "신용카드";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_credit.BackColor = System.Drawing.Color.CadetBlue;
+            this.btn_credit.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_credit.ForeColor = System.Drawing.Color.White;
+            this.btn_credit.Location = new System.Drawing.Point(267, 133);
+            this.btn_credit.Name = "btn_credit";
+            this.btn_credit.Size = new System.Drawing.Size(170, 80);
+            this.btn_credit.TabIndex = 0;
+            this.btn_credit.Text = "신용카드";
+            this.btn_credit.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btn_cash
             // 
-            this.button2.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button2.Location = new System.Drawing.Point(50, 49);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(171, 92);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "현금";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_cash.BackColor = System.Drawing.Color.Green;
+            this.btn_cash.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_cash.ForeColor = System.Drawing.Color.White;
+            this.btn_cash.Location = new System.Drawing.Point(60, 133);
+            this.btn_cash.Name = "btn_cash";
+            this.btn_cash.Size = new System.Drawing.Size(170, 80);
+            this.btn_cash.TabIndex = 0;
+            this.btn_cash.Text = "현금";
+            this.btn_cash.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btn_easy
             // 
-            this.button4.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button4.Location = new System.Drawing.Point(50, 167);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(171, 92);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "간편결제";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_easy.BackColor = System.Drawing.Color.Gold;
+            this.btn_easy.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_easy.Location = new System.Drawing.Point(60, 241);
+            this.btn_easy.Name = "btn_easy";
+            this.btn_easy.Size = new System.Drawing.Size(170, 80);
+            this.btn_easy.TabIndex = 0;
+            this.btn_easy.Text = "간편결제";
+            this.btn_easy.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btn_point
             // 
-            this.button3.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button3.Location = new System.Drawing.Point(261, 167);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(171, 92);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "포인트 사용";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_point.BackColor = System.Drawing.Color.Tomato;
+            this.btn_point.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_point.ForeColor = System.Drawing.Color.White;
+            this.btn_point.Location = new System.Drawing.Point(267, 241);
+            this.btn_point.Name = "btn_point";
+            this.btn_point.Size = new System.Drawing.Size(170, 80);
+            this.btn_point.TabIndex = 0;
+            this.btn_point.Text = "포인트 사용";
+            this.btn_point.UseVisualStyleBackColor = false;
+            this.btn_point.Click += new System.EventHandler(this.btn_point_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("나눔스퀘어 네오 ExtraBold", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.label2.Location = new System.Drawing.Point(122, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(267, 44);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "결제 방식 선택";
             // 
             // PaymentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 336);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(498, 374);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btn_point);
+            this.Controls.Add(this.btn_easy);
+            this.Controls.Add(this.btn_cash);
+            this.Controls.Add(this.btn_credit);
             this.Name = "PaymentForm";
-            this.Text = "PaymentForm";
+            this.Text = "결제 방식 선택";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_credit;
+        private System.Windows.Forms.Button btn_cash;
+        private System.Windows.Forms.Button btn_easy;
+        private System.Windows.Forms.Button btn_point;
+        private System.Windows.Forms.Label label2;
     }
 }

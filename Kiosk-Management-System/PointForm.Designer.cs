@@ -28,57 +28,88 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tb_telnum = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_ok = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btn_cancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox2
+            // tb_telnum
             // 
-            this.textBox2.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox2.Location = new System.Drawing.Point(245, 59);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(256, 32);
-            this.textBox2.TabIndex = 1;
+            this.tb_telnum.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tb_telnum.Location = new System.Drawing.Point(255, 129);
+            this.tb_telnum.Name = "tb_telnum";
+            this.tb_telnum.Size = new System.Drawing.Size(256, 32);
+            this.tb_telnum.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(52, 62);
+            this.label1.Location = new System.Drawing.Point(70, 132);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(156, 26);
             this.label1.TabIndex = 2;
             this.label1.Text = "전화번호 입력";
             // 
-            // button1
+            // btn_ok
             // 
-            this.button1.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(228, 129);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 38);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "확인";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_ok.BackColor = System.Drawing.Color.NavajoWhite;
+            this.btn_ok.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_ok.Location = new System.Drawing.Point(163, 195);
+            this.btn_ok.Name = "btn_ok";
+            this.btn_ok.Size = new System.Drawing.Size(99, 38);
+            this.btn_ok.TabIndex = 3;
+            this.btn_ok.Text = "조회";
+            this.btn_ok.UseVisualStyleBackColor = false;
+            this.btn_ok.Click += new System.EventHandler(this.btn_ok_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("나눔스퀘어 네오 ExtraBold", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.label2.Location = new System.Drawing.Point(138, 42);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(315, 44);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "포인트 사용/조회";
+            // 
+            // btn_cancel
+            // 
+            this.btn_cancel.BackColor = System.Drawing.Color.Silver;
+            this.btn_cancel.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_cancel.Location = new System.Drawing.Point(337, 195);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.Size = new System.Drawing.Size(99, 38);
+            this.btn_cancel.TabIndex = 3;
+            this.btn_cancel.Text = "취소";
+            this.btn_cancel.UseVisualStyleBackColor = false;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_ok_Click);
             // 
             // PointForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(567, 215);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(578, 274);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btn_cancel);
+            this.Controls.Add(this.btn_ok);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tb_telnum);
             this.Name = "PointForm";
-            this.Text = "PointForm";
+            this.Text = "포인트 사용/조회";
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tb_telnum;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_ok;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btn_cancel;
     }
 }

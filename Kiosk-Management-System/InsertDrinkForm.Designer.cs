@@ -29,31 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.tb_price = new System.Windows.Forms.TextBox();
+            this.tb_name = new System.Windows.Forms.TextBox();
+            this.cb_category = new System.Windows.Forms.ComboBox();
+            this.btn_insert = new System.Windows.Forms.Button();
+            this.btn_cancel = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tb_count = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox1.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox1.Location = new System.Drawing.Point(168, 53);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(197, 49);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "음료 추가";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // contextMenuStrip1
             // 
@@ -67,7 +55,7 @@
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Cursor = System.Windows.Forms.Cursors.Default;
             this.textBox2.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox2.Location = new System.Drawing.Point(100, 207);
+            this.textBox2.Location = new System.Drawing.Point(86, 178);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(94, 25);
             this.textBox2.TabIndex = 2;
@@ -79,7 +67,7 @@
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Cursor = System.Windows.Forms.Cursors.Default;
             this.textBox3.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox3.Location = new System.Drawing.Point(100, 148);
+            this.textBox3.Location = new System.Drawing.Point(86, 123);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(94, 25);
             this.textBox3.TabIndex = 2;
@@ -91,91 +79,134 @@
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox4.Cursor = System.Windows.Forms.Cursors.Default;
             this.textBox4.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox4.Location = new System.Drawing.Point(100, 267);
+            this.textBox4.Location = new System.Drawing.Point(86, 288);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(94, 25);
             this.textBox4.TabIndex = 2;
             this.textBox4.Text = "가격";
             // 
-            // textBox5
+            // tb_price
             // 
-            this.textBox5.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox5.Location = new System.Drawing.Point(211, 262);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(195, 30);
-            this.textBox5.TabIndex = 3;
+            this.tb_price.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tb_price.Location = new System.Drawing.Point(186, 285);
+            this.tb_price.Name = "tb_price";
+            this.tb_price.Size = new System.Drawing.Size(213, 30);
+            this.tb_price.TabIndex = 3;
             // 
-            // textBox6
+            // tb_name
             // 
-            this.textBox6.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox6.Location = new System.Drawing.Point(211, 206);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(195, 30);
-            this.textBox6.TabIndex = 3;
+            this.tb_name.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tb_name.Location = new System.Drawing.Point(186, 175);
+            this.tb_name.Name = "tb_name";
+            this.tb_name.Size = new System.Drawing.Size(213, 30);
+            this.tb_name.TabIndex = 3;
             // 
-            // comboBox1
+            // cb_category
             // 
-            this.comboBox1.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(211, 147);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(195, 30);
-            this.comboBox1.TabIndex = 4;
+            this.cb_category.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cb_category.FormattingEnabled = true;
+            this.cb_category.Items.AddRange(new object[] {
+            "커피",
+            "논커피",
+            "에이드/차",
+            "스무디",
+            "디저트"});
+            this.cb_category.Location = new System.Drawing.Point(186, 120);
+            this.cb_category.Name = "cb_category";
+            this.cb_category.Size = new System.Drawing.Size(213, 30);
+            this.cb_category.TabIndex = 4;
             // 
-            // button1
+            // btn_insert
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(124, 340);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 44);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "추가";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_insert.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_insert.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_insert.Location = new System.Drawing.Point(100, 340);
+            this.btn_insert.Name = "btn_insert";
+            this.btn_insert.Size = new System.Drawing.Size(114, 44);
+            this.btn_insert.TabIndex = 5;
+            this.btn_insert.Text = "추가";
+            this.btn_insert.UseVisualStyleBackColor = false;
+            this.btn_insert.Click += new System.EventHandler(this.btn_insert_Click);
             // 
-            // button2
+            // btn_cancel
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.button2.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button2.Location = new System.Drawing.Point(292, 340);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 44);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "취소";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btn_cancel.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btn_cancel.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_cancel.Location = new System.Drawing.Point(268, 340);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.Size = new System.Drawing.Size(114, 44);
+            this.btn_cancel.TabIndex = 5;
+            this.btn_cancel.Text = "취소";
+            this.btn_cancel.UseVisualStyleBackColor = false;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("나눔스퀘어 네오 ExtraBold", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.label2.Location = new System.Drawing.Point(155, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(181, 44);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "음료 추가";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBox1.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox1.Location = new System.Drawing.Point(86, 233);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(94, 25);
+            this.textBox1.TabIndex = 2;
+            this.textBox1.Text = "갯수";
+            // 
+            // tb_count
+            // 
+            this.tb_count.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tb_count.Location = new System.Drawing.Point(186, 230);
+            this.tb_count.Name = "tb_count";
+            this.tb_count.Size = new System.Drawing.Size(213, 30);
+            this.tb_count.TabIndex = 3;
             // 
             // InsertDrinkForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 482);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
+            this.ClientSize = new System.Drawing.Size(477, 438);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btn_cancel);
+            this.Controls.Add(this.btn_insert);
+            this.Controls.Add(this.cb_category);
+            this.Controls.Add(this.tb_name);
+            this.Controls.Add(this.tb_count);
+            this.Controls.Add(this.tb_price);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Name = "InsertDrinkForm";
-            this.Text = "InsertDrinkForm";
+            this.Text = "음료 추가";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.InsertDrinkForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox tb_price;
+        private System.Windows.Forms.TextBox tb_name;
+        private System.Windows.Forms.ComboBox cb_category;
+        private System.Windows.Forms.Button btn_insert;
+        private System.Windows.Forms.Button btn_cancel;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_count;
     }
 }

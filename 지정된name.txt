@@ -6,6 +6,31 @@
 스무디 탭 tab_smoo
 디저트 탭 tab_desert
 
+*커피*
+에스프레소 coffee_es
+아메리카노 coffee_ame
+카페라떼 coffee_latte
+카푸치노 coffee_capu
+카라멜마끼아또 coffee_macci
+바닐라라떼 coffee_vanila
+카페모카 coffee_moca
+아이스크림라떼 coffee_icecream
+
+*논커피*
+초코라떼 non_choco
+녹차라떼 non_green
+
+*에이드/차*
+레몬에이드 ade_lemon
+딸기에이드 ade_berry
+
+*스무디*
+초코스무디 smoo_choco
+
+*디저트*
+크로플 desert_crof
+생크림롤빵 desert_roll
+
 *기본적인 버튼*
 설정 버튼 btn_option
 선택 취소 btn_partcancel
@@ -19,19 +44,61 @@
 수량 tb_num
 총금액 tb_amount
 
-*커피*
-에스프레소 coffee_es
-아메리카노 coffee_ame
-카페라떼 coffee_clatte
-카푸치노 coffee_capu
-카라멜마끼아또 coffee_macci
-바닐라라떼 coffee_vanila
-카페모카 coffee_moca
-아이스크림라떼 coffee_icecream
 
-*에이드/차*
+
+@@@ PaymentForm @@@
+현금 버튼 btn_cash
+신용카드 버튼 btn_credit
+간편결제 버튼 btn_easy
+포인트 버튼 btn_point
+
+
+
+@@@ PointForm @@@
+전화번호 텍박 tb_telnum
+조회 버튼 btn_ok
+취소 버튼 btn_cancel
+
+
+
+@@@ PointSelectForm @@@
+사용할 포인트 텍박 tb_usePoint
+사용 버튼 btn_use
+취소 버튼 btn_cancel
+
+
+
+@@@ newCustomerForm @@@
+전화번호 텍박 tb_telnum
+등록 버튼 btn_insert
+취소 버튼 btn_cancel
+
 
 
 @@@ OptionPasswordForm @@@
-비밀번호 텍스트박스 tb_password
-로그인 btn_login
+비밀번호 텍박 tb_password
+로그인 버튼 btn_login
+
+
+
+@@@ OptionForm @@@
+*음료*
+음료 조회 버튼 btn_drinkSelect
+음료 추가 버튼 btn_drinkInsert
+음료 삭제 버튼 btn_drinkDelete
+
+*회원*
+회원 조회 버튼 btn_cusSelect
+회원 삭제 버튼 btn_cusDelete
+
+리스트 list_option
+
+
+
+@@@ InsertDrinkForm @@@
+종류 콤보박스 cb_category
+이름 텍박 tb_name
+갯수 텍박 tb_count
+가격 텍박 tb_price
+추가 버튼 btn_insert
+취소 버튼 btn_cancel
