@@ -30,7 +30,7 @@ namespace Kiosk_Management_System
                 OptionForm subFrom = new OptionForm();
                 subFrom.ShowDialog();
 
-                return;
+                this.Close();
             }
             
             else

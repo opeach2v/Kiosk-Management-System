@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -26,8 +27,8 @@ namespace Kiosk_Management_System
                 return;
             }
 
-            // 문자가 포함되었을 경우
-            // MessageBox.Show("숫자만 입력해주세요."); return;
+            // '-'의 문자가 포함되었을 경우
+            // MessageBox.Show("숫자와 '-'만 입력해주세요."); return;
 
             else
             {

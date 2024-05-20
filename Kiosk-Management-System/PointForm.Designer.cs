@@ -100,6 +100,7 @@
             this.Controls.Add(this.tb_telnum);
             this.Name = "PointForm";
             this.Text = "포인트 사용/조회";
+            this.Load += new System.EventHandler(this.PointForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

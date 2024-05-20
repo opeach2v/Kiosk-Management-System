@@ -43,12 +43,39 @@ namespace Kiosk_Management_System
             data3 = tb_count.Text;
             data4 = tb_price.Text;
 
-            sql = "INSERT INTO cb_category VALUES('"+data1+"','"+data2+"',"+data3+","+data4+")";
-            cmd.CommandText = sql;
-            cmd.ExecuteNonQuery();
+            if(cb_category.Text == "커피")
+            {
+                sql = "INSERT INTO coffeeMenu VALUES('" + data1 + "','" + data2 + "'," + data3 + "," + data4 + ")";
+                cmd.CommandText = sql;
+                cmd.ExecuteNonQuery();
+            }
+            if (cb_category.Text == "논커피")
+            {
+                sql = "INSERT INTO noncoffeeMenu VALUES('" + data1 + "','" + data2 + "'," + data3 + "," + data4 + ")";
+                cmd.CommandText = sql;
+                cmd.ExecuteNonQuery();
+            }
+            if (cb_category.Text == "에이드/차")
+            {
+                sql = "INSERT INTO adeMenu VALUES('" + data1 + "','" + data2 + "'," + data3 + "," + data4 + ")";
+                cmd.CommandText = sql;
+                cmd.ExecuteNonQuery();
+            }
+            if (cb_category.Text == "스무디")
+            {
+                sql = "INSERT INTO smooMenu VALUES('" + data1 + "','" + data2 + "'," + data3 + "," + data4 + ")";
+                cmd.CommandText = sql;
+                cmd.ExecuteNonQuery();
+            }
+            if (cb_category.Text == "디저트")
+            {
+                sql = "INSERT INTO desertMenu VALUES('" + data1 + "','" + data2 + "'," + data3 + "," + data4 + ")";
+                cmd.CommandText = sql;
+                cmd.ExecuteNonQuery();
+            }
 
-            MessageBox.Show(data1 + " 카테고리의 " + data2 + "가 추가되었습니다. 창이 닫힙니다.");
-            this.Close();
+            MessageBox.Show(data1 + " 카테고리의 " + data2 + "가 추가되었습니다.");
+            return;
         }
 
         private void btn_cancel_Click(object sender, EventArgs e)
