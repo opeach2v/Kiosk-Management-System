@@ -228,7 +228,7 @@ namespace Kiosk_Management_System
             // 순서를 클릭 후 삭제
             data1 = list_option.SelectedItems[0].Text;
 
-            sql = "DELETE FROM customer WHERE = '" + data1 + "'";
+            sql = "DELETE FROM customer WHERE id = '" + data1 + "'";
             cmd.CommandText = sql;
             cmd.ExecuteNonQuery();
 

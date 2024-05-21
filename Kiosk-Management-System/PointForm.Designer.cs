@@ -78,7 +78,7 @@
             this.btn_cancel.TabIndex = 3;
             this.btn_cancel.Text = "취소";
             this.btn_cancel.UseVisualStyleBackColor = false;
-            this.btn_cancel.Click += new System.EventHandler(this.btn_ok_Click);
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // tb_telnum
             // 

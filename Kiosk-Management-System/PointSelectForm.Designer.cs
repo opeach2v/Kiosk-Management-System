@@ -126,6 +126,7 @@
             this.Controls.Add(this.label2);
             this.Name = "PointSelectForm";
             this.Text = "PointSelectForm";
+            this.Load += new System.EventHandler(this.PointSelectForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

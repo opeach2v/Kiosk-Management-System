@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,12 @@ namespace Kiosk_Management_System
 {
     public partial class PointSelectForm : Form
     {
+       int point;
+        
+        string connStr;
+        SqlConnection conn;
+        SqlCommand cmd;
+        SqlDataReader reader;
         public PointSelectForm()
         {
             InitializeComponent();
@@ -24,7 +31,8 @@ namespace Kiosk_Management_System
 
         private void btn_use_Click(object sender, EventArgs e)
         {
-            if(tb_usePoint.Text == "")
+            string usePoint = tb_usePoint.Text;
+            if(usePoint == "")
             {
                 MessageBox.Show("사용할 포인트를 입력하세요.");
             }
@@ -37,12 +45,57 @@ namespace Kiosk_Management_System
             // MessageBox.Show("보유 포인트를 초과하였습니다."); return;
             // 그 외는 MessageBox.Show("포인트 사용이 완료되었습니다."); 하고 종료
             // (키오스크 특징상 메인화면으로 돌아갈 수 있으면 베스트)
+            if(tb_usePoint.Text.Any(c => ! char.IsDigit(c)))
+            {
+                MessageBox.Show("숫자만 입력해주세요.");
+                return;
+            }
+            else
+            {
+                // 입력된 텍스트보다 데이터베이스에서 불러온 텍스트보다 클 경우
+                if (string.Compare(tb_usePoint.Text, tb_point.Text) > 0)
+                {
+                    MessageBox.Show("보유한 포인트를 초과하였습니다.");
+                    return;
+                }
+                else
+                {
+                    point -= int.Parse(usePoint);
+                    MessageBox.Show("포인트 사용이 완료되었습니다. 남은 포인트: " +point);
+
+                    this.Close();
+                }
+            }
         }
 
         private void btn_cancel_Click(object sender, EventArgs e)
         {
             MessageBox.Show("포인트 사용을 취소합니다.");
-            return;
+            this.Close();
+        }
+
+        private void PointSelectForm_Load(object sender, EventArgs e)
+        {
+            connStr = "Server = localhost\\SQLEXPRESS;Database = CafeDB;Trusted_Connection = True;";
+            conn = new SqlConnection(connStr);
+            conn.Open();
+
+            cmd = new SqlCommand();
+            cmd.Connection = conn;
+
+            cmd.CommandText = "SELECT * FROM customer WHERE point = '" + point + "'";
+            if (!reader.Read())  // 전달받은 데이터가 없다면
+            {
+                reader.Close();
+            }
+            else
+            {
+                string data1;
+                data1 = reader.GetString(0).Trim();
+
+                tb_point.Text = data1;
+                reader.Close();
+            }
         }
     }
 }

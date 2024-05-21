@@ -24,7 +24,7 @@ namespace Kiosk_Management_System
 
         private void InsertDrinkForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            conn.Close();
+            this.Close();
         }
 
         private void btn_insert_Click(object sender, EventArgs e)
