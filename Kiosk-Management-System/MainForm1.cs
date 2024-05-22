@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -56,8 +57,21 @@ namespace Kiosk_Management_System
         int crof_price = 0;
         int roll_price = 0;
 
+        string connStr;
+        SqlConnection conn;
+        SqlCommand cmd;
+        SqlDataReader reader;
+
         public MainForm1()
         {
+
+            connStr = "Server = localhost\\SQLEXPRESS;Database = CafeDB;Trusted_Connection = True;";
+            conn = new SqlConnection(connStr);
+            conn.Open();
+
+            cmd = new SqlCommand();
+            cmd.Connection = conn;
+
             InitializeComponent();
 
             tb_num.Text = count_total.ToString();
@@ -224,6 +238,21 @@ namespace Kiosk_Management_System
         private void coffee_es_Click(object sender, EventArgs e)
         {
             AddMenuItem(es_N.Text, es_P.Text, 1300);
+            es_count++;
+
+            cmd.CommandText = "SELECT num FROM coffeeMenu WHERE name = '" +es_N.Text+"'";
+            reader = cmd.ExecuteReader();
+            if(reader.Read())
+            {
+                limit = reader.GetInt32(0);
+            }
+
+            if(limit < es_count)
+            {
+                es_count = limit;
+                MessageBox.Show("정해진 수량을 초과했습니다." +es_count);
+            }
+            reader.Close();
         }
 
         private void coffee_ame_Click(object sender, EventArgs e)
