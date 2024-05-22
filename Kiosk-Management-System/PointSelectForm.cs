@@ -13,16 +13,16 @@ namespace Kiosk_Management_System
 {
     public partial class PointSelectForm : Form
     {
-       int point;
-        
+        string points;
+        public PointSelectForm(string point)
+        {
+            InitializeComponent();
+            points = point;
+        }
         string connStr;
         SqlConnection conn;
         SqlCommand cmd;
         SqlDataReader reader;
-        public PointSelectForm()
-        {
-            InitializeComponent();
-        }
 
         private void tb_usePoint_TextChanged(object sender, EventArgs e)
         {
@@ -36,9 +36,6 @@ namespace Kiosk_Management_System
             {
                 MessageBox.Show("사용할 포인트를 입력하세요.");
             }
-
-            // 문자가 포함되었을 경우
-            // MessageBox.Show("숫자만 입력해주세요."); return;
 
             // 숫자만 사용됨.
             // 보유 포인트보다 입력한 포인트가 더 많을 경우
@@ -60,8 +57,8 @@ namespace Kiosk_Management_System
                 }
                 else
                 {
-                    point -= int.Parse(usePoint);
-                    MessageBox.Show("포인트 사용이 완료되었습니다. 남은 포인트: " +point);
+                    
+                    MessageBox.Show("포인트 사용이 완료되었습니다. 남은 포인트: " +points);
 
                     this.Close();
                 }
@@ -83,19 +80,12 @@ namespace Kiosk_Management_System
             cmd = new SqlCommand();
             cmd.Connection = conn;
 
-            cmd.CommandText = "SELECT * FROM customer WHERE point = '" + point + "'";
-            if (!reader.Read())  // 전달받은 데이터가 없다면
-            {
-                reader.Close();
-            }
-            else
-            {
-                string data1;
-                data1 = reader.GetString(0).Trim();
+            tb_point.Text = points;
+        }
 
-                tb_point.Text = data1;
-                reader.Close();
-            }
+        private void tb_point_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

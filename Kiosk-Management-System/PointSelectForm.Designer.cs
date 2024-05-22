@@ -57,6 +57,7 @@
             this.tb_point.ReadOnly = true;
             this.tb_point.Size = new System.Drawing.Size(178, 32);
             this.tb_point.TabIndex = 6;
+            this.tb_point.TextChanged += new System.EventHandler(this.tb_point_TextChanged);
             // 
             // label1
             // 

@@ -32,9 +32,12 @@ namespace Kiosk_Management_System
                 MessageBox.Show("전화번호를 먼저 입력하세요.");
                 return;
             }
-
-            // '-'의 문자가 포함되었을 경우
-            // MessageBox.Show("숫자와 '-'만 입력해주세요."); return;
+            // '-'를 제외한 문자가 포함되어있으면
+            else if (tb_telnum.Text.Any(c => !char.IsDigit(c)))
+            {
+                MessageBox.Show("숫자만 입력해주세요.");
+                return;
+            }
 
             else
             {
@@ -68,7 +71,7 @@ namespace Kiosk_Management_System
 
         private void NewCustomerForm_Load(object sender, EventArgs e)
         {
-            tb_telnum.Mask = "000-0000-0000";
+            tb_telnum.Mask = "";
         }
     }
 }
