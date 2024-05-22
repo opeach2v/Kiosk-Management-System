@@ -15,6 +15,8 @@ namespace Kiosk_Management_System
 {
     public partial class MainForm1 : Form
     {
+        int limit = 0;
+
         private bool isFirstClick = true;
         // 메뉴 전체 카운트
         int count_total = 0;
@@ -64,8 +66,6 @@ namespace Kiosk_Management_System
             // UI의 총 수량 및 가격 레이블을 갱신하는 코드를 여기에 작성합니다.
             tb_num.Text = count_total.ToString();
             tb_amount.Text = price_total.ToString();
-
-            
         }
 
 
@@ -198,7 +198,10 @@ namespace Kiosk_Management_System
             
             else
             {
-                PaymentForm subFrom = new PaymentForm();
+                string menuName = es_N.Text;
+                int number = count_total;
+
+                PaymentForm subFrom = new PaymentForm(menuName, number);
                 subFrom.ShowDialog();
             }
         }
@@ -217,6 +220,7 @@ namespace Kiosk_Management_System
             tb_amount.Text = price_total.ToString();
         }
 
+        // 커피 메뉴
         private void coffee_es_Click(object sender, EventArgs e)
         {
             AddMenuItem(es_N.Text, es_P.Text, 1300);
@@ -232,7 +236,6 @@ namespace Kiosk_Management_System
             AddMenuItem(latte_N.Text, latte_P.Text, 2800);
         }
 
-        // 커피 메뉴
         private void coffee_Capu_Click(object sender, EventArgs e)
         {
             AddMenuItem(Capu_N.Text, Capu_P.Text, 3000);
