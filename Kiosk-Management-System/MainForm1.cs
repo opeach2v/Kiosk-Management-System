@@ -78,7 +78,7 @@ namespace Kiosk_Management_System
             tb_num.Text = count_total.ToString();
             tb_amount.Text = price_total.ToString();
 
-            // UI의 총 수량 및 가격 레이블을 갱신하는 코드를 여기에 작성합니다.
+            // UI의 총 수량 및 가격 레이블을 갱신하는 코드를 여기에 작성
             tb_num.Text = count_total.ToString();
             tb_amount.Text = price_total.ToString();
         }
@@ -90,7 +90,7 @@ namespace Kiosk_Management_System
             tb_amount.Text = price_total.ToString();
         }
 
-        private void countReset()
+        private void countReset()   // 리스트뷰에 등록되는 모든 음료 총량 초기화
         {
             es_count = 0;
             ame_count = 0;
@@ -107,7 +107,7 @@ namespace Kiosk_Management_System
             smoochoco_count = 0;
             crof_count = 0;
             roll_count = 0;
-        } // 리스트뷰에 등록되는 모든 음료 총량 초기화
+        } 
 
         private void priceReset() // 리스트뷰에 등록되는 모든 음료 총금액 초기화
         {
@@ -127,22 +127,47 @@ namespace Kiosk_Management_System
             crof_price = 0;
             roll_price = 0;
     }
+        
+        // 메뉴 이름에 해당하는 가격을 가져오는 메서드
+        private int GetPriceByName(string name)
+        {
+            switch (name)
+            {
+                case "에스프레소":
+                    return 1300;
+                case "아메리카노":
+                    return 1800;
+                case "카페라떼":
+                    return 2800;
+                case "카푸치노":
+                    return 3000;
+                case "카라멜 마끼아또":
+                    return 2800;
+                case "바닐라 라떼":
+                    return 2800;
+                case "카페 모카":
+                    return 2800;
+                case "아이스크림 라떼":
+                    return 2800;
+                default:
+                    return 0;
+            }
+        }
 
         private void btn_option_Click(object sender, EventArgs e)
         {
+            // 옵션 들어가기 전 관리자용 비밀번호 쳐야 함
             OptionPasswordForm subFrom = new OptionPasswordForm();
             subFrom.ShowDialog();
         }
 
-        private void btn_partcancel_Click(object sender, EventArgs e)
+        private void btn_partcancel_Click(object sender, EventArgs e)   // 선택 취소
         {
             if (list_purchase.SelectedItems.Count == 0) // 선택된 항목이 없을 경우
             {
                 MessageBox.Show("취소할 메뉴를 선택해주세요.");
                 return;
             }
-
-
 
             for (int i = list_purchase.SelectedItems.Count - 1; i >= 0; i--)
             {
@@ -189,41 +214,14 @@ namespace Kiosk_Management_System
                 list_purchase.Items.Remove(selectedItem);
 
             }
-
             // 수량과 총액을 새로고침
             totalRefresh();
            
         }
 
-        // 메뉴 이름에 해당하는 가격을 가져오는 메서드
-        private int GetPriceByName(string name)
+        private void btn_cancel_Click(object sender, EventArgs e)   // 전체 취소
         {
-            switch (name)
-            {
-                case "에스프레소":
-                    return 1300;
-                case "아메리카노":
-                    return 1800;
-                case "카페라떼":
-                    return 2800;
-                case "카푸치노":
-                    return 3000;
-                case "카라멜 마끼아또":
-                    return 2800;
-                case "바닐라 라떼":
-                    return 2800;
-                case "카페 모카":
-                    return 2800;
-                case "아이스크림 라떼":
-                    return 2800;
-                default:
-                    return 0;
-            }
-        }
-
-        private void btn_cancel_Click(object sender, EventArgs e)
-        {
-            if (list_purchase.Items.Count == 0)    // 리스트가 비어있을 경우. 뭔가 이게 아닌 것 같은 느낌 ㅠㅠ
+            if (list_purchase.Items.Count == 0)    // 리스트가 비어있을 경우
             {
                 MessageBox.Show("구매내역이 비어있습니다.");
                 return;
@@ -243,9 +241,9 @@ namespace Kiosk_Management_System
             }
         }
 
-        private void btn_sell_Click(object sender, EventArgs e)
+        private void btn_sell_Click(object sender, EventArgs e) // 결제하기
         {
-            if (list_purchase.Items.Count == 0)    // 리스트가 비어있을 경우. 뭔가 이게 아닌 것 같은 느낌 ㅠㅠ
+            if (list_purchase.Items.Count == 0)    // 리스트가 비어있을 경우
             {
                 MessageBox.Show("결제할 메뉴가 없습니다.");
                 return;

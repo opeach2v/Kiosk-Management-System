@@ -30,7 +30,6 @@ namespace Kiosk_Management_System
         private void PointForm_Load(object sender, EventArgs e)
         {
             tb_telnum.Mask = "";
-
         }
 
         private void btn_ok_Click(object sender, EventArgs e)
@@ -56,12 +55,13 @@ namespace Kiosk_Management_System
             int result;
             string data1;
             try
-            {
-                result = (int)cmd.ExecuteScalar(); // 받는 값이 있으면 1 반환 , 없으면 에러 
-                cmd.CommandText = "SELECT point FROM customer WHERE telnum = '" + tb_telnum.Text + "'";
-                point = cmd.ExecuteNonQuery();
-                data1 = point.ToString();
+            {   // 받는 값이 있으면 1 반환 , 없으면 에러 
                 // 1일 때만 정상 작동 에러라면 catch로 이동
+                cmd.CommandText = "SELECT point FROM customer WHERE telnum = '" + tb_telnum.Text + "'";
+                result = (int)cmd.ExecuteScalar();
+                
+                int point = Convert.ToInt32(result);
+                data1 = point.ToString();
                 MessageBox.Show("정상적으로 조회되었습니다.");
                 PointSelectForm subForm = new PointSelectForm(data1);
                 subForm.ShowDialog();
@@ -74,9 +74,8 @@ namespace Kiosk_Management_System
                 NewCustomerForm subForm = new NewCustomerForm();
                 subForm.ShowDialog();
                 this.Close();
+                return;
             }
-            // this.Close();로 하는 이유: 등록폼에서 정상적으로 등록된 뒤 다시 조회하는 과정을 거쳐야 함
-
         }
 
         private void btn_cancel_Click(object sender, EventArgs e)

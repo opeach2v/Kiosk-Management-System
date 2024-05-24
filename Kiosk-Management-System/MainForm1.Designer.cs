@@ -175,7 +175,7 @@
             this.tb_amount.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_amount.Cursor = System.Windows.Forms.Cursors.Default;
             this.tb_amount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tb_amount.Location = new System.Drawing.Point(355, 906);
+            this.tb_amount.Location = new System.Drawing.Point(356, 903);
             this.tb_amount.Name = "tb_amount";
             this.tb_amount.ReadOnly = true;
             this.tb_amount.Size = new System.Drawing.Size(149, 23);
@@ -426,7 +426,7 @@
             this.coffee_macci.BackColor = System.Drawing.Color.Gainsboro;
             this.coffee_macci.Cursor = System.Windows.Forms.Cursors.Hand;
             this.coffee_macci.Dock = System.Windows.Forms.DockStyle.Top;
-            this.coffee_macci.Image = ((System.Drawing.Image)(resources.GetObject("coffee_macci.Image")));
+            this.coffee_macci.Image = global::Kiosk_Management_System.Properties.Resources.카라멜마끼아또;
             this.coffee_macci.Location = new System.Drawing.Point(0, 0);
             this.coffee_macci.Name = "coffee_macci";
             this.coffee_macci.Size = new System.Drawing.Size(170, 127);
@@ -470,7 +470,7 @@
             this.coffee_Capu.BackColor = System.Drawing.Color.Gainsboro;
             this.coffee_Capu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.coffee_Capu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.coffee_Capu.Image = ((System.Drawing.Image)(resources.GetObject("coffee_Capu.Image")));
+            this.coffee_Capu.Image = global::Kiosk_Management_System.Properties.Resources.카푸치노;
             this.coffee_Capu.Location = new System.Drawing.Point(0, 0);
             this.coffee_Capu.Name = "coffee_Capu";
             this.coffee_Capu.Size = new System.Drawing.Size(170, 127);
@@ -514,7 +514,7 @@
             this.coffee_latte.BackColor = System.Drawing.Color.Gainsboro;
             this.coffee_latte.Cursor = System.Windows.Forms.Cursors.Hand;
             this.coffee_latte.Dock = System.Windows.Forms.DockStyle.Top;
-            this.coffee_latte.Image = ((System.Drawing.Image)(resources.GetObject("coffee_latte.Image")));
+            this.coffee_latte.Image = global::Kiosk_Management_System.Properties.Resources.카페라떼;
             this.coffee_latte.Location = new System.Drawing.Point(0, 0);
             this.coffee_latte.Name = "coffee_latte";
             this.coffee_latte.Size = new System.Drawing.Size(170, 127);
@@ -955,10 +955,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(22, 25);
+            this.label1.Font = new System.Drawing.Font("나눔스퀘어 네오 ExtraBold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(27, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 25);
+            this.label1.Size = new System.Drawing.Size(183, 25);
             this.label1.TabIndex = 19;
             this.label1.Text = "2 CAFE 경남대점";
             // 
@@ -976,7 +976,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(32, 906);
+            this.label3.Location = new System.Drawing.Point(42, 903);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 25);
             this.label3.TabIndex = 21;
@@ -986,7 +986,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(297, 907);
+            this.label4.Location = new System.Drawing.Point(295, 903);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 25);
             this.label4.TabIndex = 21;
@@ -996,7 +996,7 @@
             // 
             this.btn_option.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_option.Image = global::Kiosk_Management_System.Properties.Resources.설정1;
-            this.btn_option.Location = new System.Drawing.Point(519, 14);
+            this.btn_option.Location = new System.Drawing.Point(534, 15);
             this.btn_option.Name = "btn_option";
             this.btn_option.Size = new System.Drawing.Size(35, 35);
             this.btn_option.TabIndex = 6;

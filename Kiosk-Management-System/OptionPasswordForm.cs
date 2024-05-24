@@ -42,7 +42,7 @@ namespace Kiosk_Management_System
 
         private void OptionPasswordForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+            this.Close();
         }
     }
 }
