@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm1));
-            this.list_purchase = new System.Windows.Forms.ListView();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.btn_sell = new System.Windows.Forms.Button();
             this.tb_amount = new System.Windows.Forms.TextBox();
@@ -107,6 +106,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_option = new System.Windows.Forms.Button();
+            this.list_purchase = new System.Windows.Forms.ListBox();
             this.bttab.SuspendLayout();
             this.tab_coffee.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -145,21 +145,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dessert_crof)).BeginInit();
             this.SuspendLayout();
             // 
-            // list_purchase
-            // 
-            this.list_purchase.Font = new System.Drawing.Font("나눔스퀘어", 9.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.list_purchase.HideSelection = false;
-            this.list_purchase.Location = new System.Drawing.Point(16, 700);
-            this.list_purchase.Name = "list_purchase";
-            this.list_purchase.Size = new System.Drawing.Size(432, 191);
-            this.list_purchase.TabIndex = 10;
-            this.list_purchase.UseCompatibleStateImageBehavior = false;
-            this.list_purchase.View = System.Windows.Forms.View.List;
-            // 
             // btn_cancel
             // 
             this.btn_cancel.BackColor = System.Drawing.Color.Gainsboro;
-            this.btn_cancel.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_cancel.Location = new System.Drawing.Point(454, 751);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(115, 46);
@@ -171,7 +160,7 @@
             // btn_sell
             // 
             this.btn_sell.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_sell.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_sell.Location = new System.Drawing.Point(454, 802);
             this.btn_sell.Name = "btn_sell";
             this.btn_sell.Size = new System.Drawing.Size(115, 89);
@@ -185,7 +174,7 @@
             this.tb_amount.BackColor = System.Drawing.Color.PeachPuff;
             this.tb_amount.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_amount.Cursor = System.Windows.Forms.Cursors.Default;
-            this.tb_amount.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tb_amount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.tb_amount.Location = new System.Drawing.Point(355, 906);
             this.tb_amount.Name = "tb_amount";
             this.tb_amount.ReadOnly = true;
@@ -212,7 +201,7 @@
             this.tb_num.BackColor = System.Drawing.Color.PeachPuff;
             this.tb_num.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_num.Cursor = System.Windows.Forms.Cursors.Default;
-            this.tb_num.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tb_num.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.tb_num.Location = new System.Drawing.Point(100, 905);
             this.tb_num.Name = "tb_num";
             this.tb_num.ReadOnly = true;
@@ -224,7 +213,7 @@
             // btn_partcancel
             // 
             this.btn_partcancel.BackColor = System.Drawing.Color.MistyRose;
-            this.btn_partcancel.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_partcancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_partcancel.Location = new System.Drawing.Point(454, 700);
             this.btn_partcancel.Name = "btn_partcancel";
             this.btn_partcancel.Size = new System.Drawing.Size(115, 46);
@@ -240,7 +229,7 @@
             this.bttab.Controls.Add(this.tab_ade);
             this.bttab.Controls.Add(this.tab_smoo);
             this.bttab.Controls.Add(this.tab_desert);
-            this.bttab.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.bttab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.bttab.ItemSize = new System.Drawing.Size(110, 40);
             this.bttab.Location = new System.Drawing.Point(12, 70);
             this.bttab.Name = "bttab";
@@ -283,20 +272,20 @@
             // icecream_P
             // 
             this.icecream_P.AutoSize = true;
-            this.icecream_P.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.icecream_P.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.icecream_P.Location = new System.Drawing.Point(47, 151);
             this.icecream_P.Name = "icecream_P";
-            this.icecream_P.Size = new System.Drawing.Size(77, 20);
+            this.icecream_P.Size = new System.Drawing.Size(67, 22);
             this.icecream_P.TabIndex = 2;
             this.icecream_P.Text = "2800원";
             // 
             // icecream_N
             // 
             this.icecream_N.AutoSize = true;
-            this.icecream_N.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.icecream_N.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.icecream_N.Location = new System.Drawing.Point(24, 129);
             this.icecream_N.Name = "icecream_N";
-            this.icecream_N.Size = new System.Drawing.Size(128, 20);
+            this.icecream_N.Size = new System.Drawing.Size(101, 22);
             this.icecream_N.TabIndex = 1;
             this.icecream_N.Text = "아이스크림라떼";
             // 
@@ -327,20 +316,20 @@
             // moca_P
             // 
             this.moca_P.AutoSize = true;
-            this.moca_P.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.moca_P.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.moca_P.Location = new System.Drawing.Point(45, 151);
             this.moca_P.Name = "moca_P";
-            this.moca_P.Size = new System.Drawing.Size(77, 20);
+            this.moca_P.Size = new System.Drawing.Size(67, 22);
             this.moca_P.TabIndex = 2;
             this.moca_P.Text = "2800원";
             // 
             // moca_N
             // 
             this.moca_N.AutoSize = true;
-            this.moca_N.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moca_N.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.moca_N.Location = new System.Drawing.Point(46, 129);
             this.moca_N.Name = "moca_N";
-            this.moca_N.Size = new System.Drawing.Size(77, 20);
+            this.moca_N.Size = new System.Drawing.Size(62, 22);
             this.moca_N.TabIndex = 1;
             this.moca_N.Text = "카페모카";
             // 
@@ -371,20 +360,20 @@
             // vanila_P
             // 
             this.vanila_P.AutoSize = true;
-            this.vanila_P.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.vanila_P.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.vanila_P.Location = new System.Drawing.Point(45, 151);
             this.vanila_P.Name = "vanila_P";
-            this.vanila_P.Size = new System.Drawing.Size(77, 20);
+            this.vanila_P.Size = new System.Drawing.Size(67, 22);
             this.vanila_P.TabIndex = 2;
             this.vanila_P.Text = "2800원";
             // 
             // vanila_N
             // 
             this.vanila_N.AutoSize = true;
-            this.vanila_N.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vanila_N.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vanila_N.Location = new System.Drawing.Point(36, 129);
             this.vanila_N.Name = "vanila_N";
-            this.vanila_N.Size = new System.Drawing.Size(94, 20);
+            this.vanila_N.Size = new System.Drawing.Size(75, 22);
             this.vanila_N.TabIndex = 1;
             this.vanila_N.Text = "바닐라라떼";
             // 
@@ -415,20 +404,20 @@
             // macci_P
             // 
             this.macci_P.AutoSize = true;
-            this.macci_P.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.macci_P.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.macci_P.Location = new System.Drawing.Point(45, 151);
             this.macci_P.Name = "macci_P";
-            this.macci_P.Size = new System.Drawing.Size(77, 20);
+            this.macci_P.Size = new System.Drawing.Size(67, 22);
             this.macci_P.TabIndex = 2;
             this.macci_P.Text = "2800원";
             // 
             // macci_N
             // 
             this.macci_N.AutoSize = true;
-            this.macci_N.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.macci_N.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.macci_N.Location = new System.Drawing.Point(24, 129);
             this.macci_N.Name = "macci_N";
-            this.macci_N.Size = new System.Drawing.Size(128, 20);
+            this.macci_N.Size = new System.Drawing.Size(101, 22);
             this.macci_N.TabIndex = 1;
             this.macci_N.Text = "카라멜마끼아또";
             // 
@@ -459,20 +448,20 @@
             // Capu_P
             // 
             this.Capu_P.AutoSize = true;
-            this.Capu_P.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Capu_P.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Capu_P.Location = new System.Drawing.Point(45, 151);
             this.Capu_P.Name = "Capu_P";
-            this.Capu_P.Size = new System.Drawing.Size(78, 20);
+            this.Capu_P.Size = new System.Drawing.Size(67, 22);
             this.Capu_P.TabIndex = 2;
             this.Capu_P.Text = "3000원";
             // 
             // Capu_N
             // 
             this.Capu_N.AutoSize = true;
-            this.Capu_N.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Capu_N.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Capu_N.Location = new System.Drawing.Point(46, 129);
             this.Capu_N.Name = "Capu_N";
-            this.Capu_N.Size = new System.Drawing.Size(77, 20);
+            this.Capu_N.Size = new System.Drawing.Size(62, 22);
             this.Capu_N.TabIndex = 1;
             this.Capu_N.Text = "카푸치노";
             // 
@@ -503,20 +492,20 @@
             // latte_P
             // 
             this.latte_P.AutoSize = true;
-            this.latte_P.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.latte_P.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.latte_P.Location = new System.Drawing.Point(45, 151);
             this.latte_P.Name = "latte_P";
-            this.latte_P.Size = new System.Drawing.Size(77, 20);
+            this.latte_P.Size = new System.Drawing.Size(67, 22);
             this.latte_P.TabIndex = 2;
             this.latte_P.Text = "2800원";
             // 
             // latte_N
             // 
             this.latte_N.AutoSize = true;
-            this.latte_N.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.latte_N.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.latte_N.Location = new System.Drawing.Point(42, 129);
             this.latte_N.Name = "latte_N";
-            this.latte_N.Size = new System.Drawing.Size(77, 20);
+            this.latte_N.Size = new System.Drawing.Size(62, 22);
             this.latte_N.TabIndex = 1;
             this.latte_N.Text = "카페라떼";
             // 
@@ -547,20 +536,20 @@
             // ame_P
             // 
             this.ame_P.AutoSize = true;
-            this.ame_P.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.ame_P.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.ame_P.Location = new System.Drawing.Point(45, 151);
             this.ame_P.Name = "ame_P";
-            this.ame_P.Size = new System.Drawing.Size(74, 20);
+            this.ame_P.Size = new System.Drawing.Size(67, 22);
             this.ame_P.TabIndex = 2;
             this.ame_P.Text = "1800원";
             // 
             // ame_N
             // 
             this.ame_N.AutoSize = true;
-            this.ame_N.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ame_N.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ame_N.Location = new System.Drawing.Point(36, 129);
             this.ame_N.Name = "ame_N";
-            this.ame_N.Size = new System.Drawing.Size(94, 20);
+            this.ame_N.Size = new System.Drawing.Size(75, 22);
             this.ame_N.TabIndex = 1;
             this.ame_N.Text = "아메리카노";
             // 
@@ -591,20 +580,20 @@
             // es_P
             // 
             this.es_P.AutoSize = true;
-            this.es_P.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.es_P.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.es_P.Location = new System.Drawing.Point(46, 153);
             this.es_P.Name = "es_P";
-            this.es_P.Size = new System.Drawing.Size(74, 20);
+            this.es_P.Size = new System.Drawing.Size(67, 22);
             this.es_P.TabIndex = 2;
             this.es_P.Text = "1300원";
             // 
             // es_N
             // 
             this.es_N.AutoSize = true;
-            this.es_N.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.es_N.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.es_N.Location = new System.Drawing.Point(38, 129);
             this.es_N.Name = "es_N";
-            this.es_N.Size = new System.Drawing.Size(94, 20);
+            this.es_N.Size = new System.Drawing.Size(75, 22);
             this.es_N.TabIndex = 1;
             this.es_N.Text = "에스프레소";
             // 
@@ -649,7 +638,7 @@
             this.choco_P.AutoSize = true;
             this.choco_P.Location = new System.Drawing.Point(55, 147);
             this.choco_P.Name = "choco_P";
-            this.choco_P.Size = new System.Drawing.Size(85, 22);
+            this.choco_P.Size = new System.Drawing.Size(75, 25);
             this.choco_P.TabIndex = 2;
             this.choco_P.Text = "3000원";
             // 
@@ -658,7 +647,7 @@
             this.choco_N.AutoSize = true;
             this.choco_N.Location = new System.Drawing.Point(53, 130);
             this.choco_N.Name = "choco_N";
-            this.choco_N.Size = new System.Drawing.Size(86, 22);
+            this.choco_N.Size = new System.Drawing.Size(72, 25);
             this.choco_N.TabIndex = 1;
             this.choco_N.Text = "초코라뗴";
             // 
@@ -691,7 +680,7 @@
             this.green_P.AutoSize = true;
             this.green_P.Location = new System.Drawing.Point(55, 147);
             this.green_P.Name = "green_P";
-            this.green_P.Size = new System.Drawing.Size(85, 22);
+            this.green_P.Size = new System.Drawing.Size(75, 25);
             this.green_P.TabIndex = 2;
             this.green_P.Text = "3200원";
             // 
@@ -700,7 +689,7 @@
             this.green_N.AutoSize = true;
             this.green_N.Location = new System.Drawing.Point(53, 129);
             this.green_N.Name = "green_N";
-            this.green_N.Size = new System.Drawing.Size(86, 22);
+            this.green_N.Size = new System.Drawing.Size(72, 25);
             this.green_N.TabIndex = 1;
             this.green_N.Text = "녹차라떼";
             // 
@@ -745,7 +734,7 @@
             this.berry_P.AutoSize = true;
             this.berry_P.Location = new System.Drawing.Point(55, 147);
             this.berry_P.Name = "berry_P";
-            this.berry_P.Size = new System.Drawing.Size(85, 22);
+            this.berry_P.Size = new System.Drawing.Size(75, 25);
             this.berry_P.TabIndex = 2;
             this.berry_P.Text = "3500원";
             // 
@@ -754,7 +743,7 @@
             this.berry_N.AutoSize = true;
             this.berry_N.Location = new System.Drawing.Point(47, 129);
             this.berry_N.Name = "berry_N";
-            this.berry_N.Size = new System.Drawing.Size(105, 22);
+            this.berry_N.Size = new System.Drawing.Size(87, 25);
             this.berry_N.TabIndex = 1;
             this.berry_N.Text = "딸기에이드";
             // 
@@ -787,7 +776,7 @@
             this.lemon_P.AutoSize = true;
             this.lemon_P.Location = new System.Drawing.Point(55, 147);
             this.lemon_P.Name = "lemon_P";
-            this.lemon_P.Size = new System.Drawing.Size(85, 22);
+            this.lemon_P.Size = new System.Drawing.Size(75, 25);
             this.lemon_P.TabIndex = 2;
             this.lemon_P.Text = "3500원";
             // 
@@ -796,7 +785,7 @@
             this.lemon_N.AutoSize = true;
             this.lemon_N.Location = new System.Drawing.Point(47, 129);
             this.lemon_N.Name = "lemon_N";
-            this.lemon_N.Size = new System.Drawing.Size(105, 22);
+            this.lemon_N.Size = new System.Drawing.Size(87, 25);
             this.lemon_N.TabIndex = 1;
             this.lemon_N.Text = "레몬에이드";
             // 
@@ -840,7 +829,7 @@
             this.smoo_choco_P.AutoSize = true;
             this.smoo_choco_P.Location = new System.Drawing.Point(55, 147);
             this.smoo_choco_P.Name = "smoo_choco_P";
-            this.smoo_choco_P.Size = new System.Drawing.Size(85, 22);
+            this.smoo_choco_P.Size = new System.Drawing.Size(75, 25);
             this.smoo_choco_P.TabIndex = 2;
             this.smoo_choco_P.Text = "4400원";
             // 
@@ -849,7 +838,7 @@
             this.smoo_choco_N.AutoSize = true;
             this.smoo_choco_N.Location = new System.Drawing.Point(47, 129);
             this.smoo_choco_N.Name = "smoo_choco_N";
-            this.smoo_choco_N.Size = new System.Drawing.Size(105, 22);
+            this.smoo_choco_N.Size = new System.Drawing.Size(87, 25);
             this.smoo_choco_N.TabIndex = 1;
             this.smoo_choco_N.Text = "초코스무디";
             // 
@@ -894,7 +883,7 @@
             this.roll_P.AutoSize = true;
             this.roll_P.Location = new System.Drawing.Point(55, 147);
             this.roll_P.Name = "roll_P";
-            this.roll_P.Size = new System.Drawing.Size(85, 22);
+            this.roll_P.Size = new System.Drawing.Size(75, 25);
             this.roll_P.TabIndex = 2;
             this.roll_P.Text = "4400원";
             // 
@@ -903,7 +892,7 @@
             this.roll_N.AutoSize = true;
             this.roll_N.Location = new System.Drawing.Point(47, 129);
             this.roll_N.Name = "roll_N";
-            this.roll_N.Size = new System.Drawing.Size(105, 22);
+            this.roll_N.Size = new System.Drawing.Size(87, 25);
             this.roll_N.TabIndex = 1;
             this.roll_N.Text = "생크림롤빵";
             // 
@@ -936,7 +925,7 @@
             this.crof_P.AutoSize = true;
             this.crof_P.Location = new System.Drawing.Point(55, 147);
             this.crof_P.Name = "crof_P";
-            this.crof_P.Size = new System.Drawing.Size(85, 22);
+            this.crof_P.Size = new System.Drawing.Size(75, 25);
             this.crof_P.TabIndex = 2;
             this.crof_P.Text = "2000원";
             // 
@@ -945,7 +934,7 @@
             this.crof_N.AutoSize = true;
             this.crof_N.Location = new System.Drawing.Point(60, 129);
             this.crof_N.Name = "crof_N";
-            this.crof_N.Size = new System.Drawing.Size(67, 22);
+            this.crof_N.Size = new System.Drawing.Size(57, 25);
             this.crof_N.TabIndex = 1;
             this.crof_N.Text = "크로플";
             // 
@@ -966,40 +955,40 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.Location = new System.Drawing.Point(22, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 22);
+            this.label1.Size = new System.Drawing.Size(154, 25);
             this.label1.TabIndex = 19;
             this.label1.Text = "2 CAFE 경남대점";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.Location = new System.Drawing.Point(12, 671);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 22);
+            this.label2.Size = new System.Drawing.Size(72, 25);
             this.label2.TabIndex = 20;
             this.label2.Text = "구매내역";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.Location = new System.Drawing.Point(32, 906);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 22);
+            this.label3.Size = new System.Drawing.Size(42, 25);
             this.label3.TabIndex = 21;
             this.label3.Text = "수량";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.Location = new System.Drawing.Point(297, 907);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 22);
+            this.label4.Size = new System.Drawing.Size(42, 25);
             this.label4.TabIndex = 21;
             this.label4.Text = "총액";
             // 
@@ -1014,12 +1003,23 @@
             this.btn_option.UseVisualStyleBackColor = true;
             this.btn_option.Click += new System.EventHandler(this.btn_option_Click);
             // 
+            // list_purchase
+            // 
+            this.list_purchase.FormattingEnabled = true;
+            this.list_purchase.ItemHeight = 25;
+            this.list_purchase.Location = new System.Drawing.Point(17, 708);
+            this.list_purchase.Name = "list_purchase";
+            this.list_purchase.Size = new System.Drawing.Size(431, 179);
+            this.list_purchase.TabIndex = 22;
+            // 
             // MainForm1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.PeachPuff;
             this.ClientSize = new System.Drawing.Size(594, 944);
+            this.Controls.Add(this.list_purchase);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -1031,9 +1031,8 @@
             this.Controls.Add(this.tb_amount);
             this.Controls.Add(this.btn_sell);
             this.Controls.Add(this.btn_cancel);
-            this.Controls.Add(this.list_purchase);
             this.Controls.Add(this.btn_option);
-            this.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Name = "MainForm1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "2CAFE-Kiosk";
@@ -1095,7 +1094,6 @@
 
         #endregion
         private System.Windows.Forms.Button btn_option;
-        private System.Windows.Forms.ListView list_purchase;
         private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.Button btn_sell;
         private System.Windows.Forms.TextBox tb_amount;
@@ -1172,6 +1170,7 @@
         private System.Windows.Forms.Label crof_P;
         private System.Windows.Forms.Label crof_N;
         private System.Windows.Forms.PictureBox dessert_crof;
+        private System.Windows.Forms.ListBox list_purchase;
     }
 }
 

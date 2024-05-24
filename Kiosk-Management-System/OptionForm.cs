@@ -40,8 +40,8 @@ namespace Kiosk_Management_System
             list_option.View = View.Details;
             list_option.GridLines = true;
             int listWidth = list_option.Width;
-            list_option.Columns.Add("카테고리", (int)(listWidth * 0.3));
             list_option.Columns.Add("이름", (int)(listWidth * 0.3));
+            list_option.Columns.Add("카테고리", (int)(listWidth * 0.3));
             list_option.Columns.Add("갯수", (int)(listWidth * 0.2));
             list_option.Columns.Add("가격", (int)(listWidth * 0.2));
 
@@ -59,8 +59,8 @@ namespace Kiosk_Management_System
                 data3 = reader1.GetInt32(2).ToString();
                 data4 = reader1.GetInt32(3).ToString();
 
-                item1 = new ListViewItem(data1);
-                item1.SubItems.Add(data2);
+                item1 = new ListViewItem(data2);
+                item1.SubItems.Add(data1);
                 item1.SubItems.Add(data3);
                 item1.SubItems.Add(data4);
 
@@ -80,8 +80,8 @@ namespace Kiosk_Management_System
                 data3 = reader2.GetInt32(2).ToString();
                 data4 = reader2.GetInt32(3).ToString();
 
-                item2 = new ListViewItem(data1);
-                item2.SubItems.Add(data2);
+                item2 = new ListViewItem(data2);
+                item2.SubItems.Add(data1);
                 item2.SubItems.Add(data3);
                 item2.SubItems.Add(data4);
 
@@ -101,8 +101,8 @@ namespace Kiosk_Management_System
                 data3 = reader3.GetInt32(2).ToString();
                 data4 = reader3.GetInt32(3).ToString();
 
-                item3 = new ListViewItem(data1);
-                item3.SubItems.Add(data2);
+                item3 = new ListViewItem(data2);
+                item3.SubItems.Add(data1);
                 item3.SubItems.Add(data3);
                 item3.SubItems.Add(data4);
 
@@ -122,8 +122,8 @@ namespace Kiosk_Management_System
                 data3 = reader4.GetInt32(2).ToString();
                 data4 = reader4.GetInt32(3).ToString();
 
-                item4 = new ListViewItem(data1);
-                item4.SubItems.Add(data2);
+                item4 = new ListViewItem(data2);
+                item4.SubItems.Add(data1);
                 item4.SubItems.Add(data3);
                 item4.SubItems.Add(data4);
 
@@ -143,8 +143,8 @@ namespace Kiosk_Management_System
                 data3 = reader5.GetInt32(2).ToString();
                 data4 = reader5.GetInt32(3).ToString();
 
-                item5 = new ListViewItem(data1);
-                item5.SubItems.Add(data2);
+                item5 = new ListViewItem(data2);
+                item5.SubItems.Add(data1);
                 item5.SubItems.Add(data3);
                 item5.SubItems.Add(data4);
 
@@ -173,7 +173,7 @@ namespace Kiosk_Management_System
 
             // 메뉴 이름을 클릭 후 삭제
             data1 = list_option.SelectedItems[0].Text;
-
+            MessageBox.Show(data1);
             sql = "DELETE FROM coffeeMenu WHERE name = '" + data1 + "'";
             cmd.CommandText = sql;
             cmd.ExecuteNonQuery();
