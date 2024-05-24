@@ -13,5 +13,3 @@ adeMenu(")
 smooMenu(")
 desertMenu(")
 customer(id INT PRIMARY KEY CLUSTERED IDENTITY(1, 1) NOT NULL, telnum CHAR(15), point INT)
-
-
