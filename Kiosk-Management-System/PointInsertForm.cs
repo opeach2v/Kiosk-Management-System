@@ -6,36 +6,26 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Kiosk_Management_System
 {
-    public partial class PointForm : Form
+    public partial class PointInsertForm : Form
     {
-        int point;
-        int price;
-
         string connStr;
         SqlConnection conn;
         SqlCommand cmd;
         SqlDataReader reader;
+        double amount;
 
-        public PointForm(int price)
+        public PointInsertForm(double amount)
         {
             InitializeComponent();
-            this.price = price;
-        
+            this.amount = amount;
         }
 
-        private void PointForm_Load(object sender, EventArgs e)
-        {
-            tb_telnum.Mask = "";
-
-        }
-
-        private void btn_ok_Click(object sender, EventArgs e)
+        private void btn_insert_Click(object sender, EventArgs e)
         {
             connStr = "Server=localhost\\SQLEXPRESS;Database=CafeDB;Trusted_Connection=True;";
             conn = new SqlConnection(connStr);
@@ -63,27 +53,20 @@ namespace Kiosk_Management_System
                 MessageBox.Show("등록된 정보가 없습니다. 회원등록 창으로 이동합니다.");
                 NewCustomerForm subForm = new NewCustomerForm();
                 subForm.ShowDialog();
-                this.Close();
             }
             else
             {
-                // 입력한 번호가 데이터베이스에 존재할 때 포인트 조회
+                // 입력한 번호가 데이터베이스에 존재할 때 포인트 적립
                 cmd.CommandText = "SELECT point FROM customer WHERE telnum = @telnum";
-                int point = (int)cmd.ExecuteScalar();
+                double point = (double)cmd.ExecuteScalar();
+                point += amount*0.1;
+                cmd.CommandText = "UPDATE customer SET point =" + point + "WHERE telnum = @telnum";
+                cmd.ExecuteNonQuery();
 
-                MessageBox.Show("정상적으로 조회되었습니다.");
-                PointSelectForm subForm = new PointSelectForm(point, price);
-                subForm.ShowDialog();
-                price = PointSelectForm.Price;  // PointSelectForm에서 포인트 차감 후 남은 결제액을 가져와야 하는데...오류 발생
+                MessageBox.Show("포인트가 적립되었습니다.");
                 this.Close();
             }
-
             conn.Close();
-        }
-
-        private void btn_cancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

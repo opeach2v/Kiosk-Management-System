@@ -173,12 +173,11 @@ namespace Kiosk_Management_System
 
             // 메뉴 이름을 클릭 후 삭제
             data1 = list_option.SelectedItems[0].Text;
-            MessageBox.Show(data1);
             sql = "DELETE FROM coffeeMenu WHERE name = '" + data1 + "'";
             cmd.CommandText = sql;
             cmd.ExecuteNonQuery();
 
-            MessageBox.Show("메뉴(" + data1 + ")가 잘 삭제되었습니다.");
+            MessageBox.Show("메뉴(" + data1 + ")가 삭제되었습니다.");
             return;
         }
 
@@ -232,7 +231,7 @@ namespace Kiosk_Management_System
             cmd.CommandText = sql;
             cmd.ExecuteNonQuery();
 
-            MessageBox.Show("회원(" + data1 + ")이 잘 삭제되었습니다.");
+            MessageBox.Show("회원(" + data1 + ")이 삭제되었습니다.");
             return;
         }
 

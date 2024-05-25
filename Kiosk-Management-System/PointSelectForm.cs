@@ -13,11 +13,20 @@ namespace Kiosk_Management_System
 {
     public partial class PointSelectForm : Form
     {
-        string points;
-        public PointSelectForm(string point)
+        int points;
+        private int price;
+
+        public int Price // 이전 창으로 포인트 차감 후 남은 결제액 전달...인데 PointForm에서 오류 발생
+        {
+            get { return price; }
+            set { price = value; }
+        }
+
+        public PointSelectForm(int point, int price)
         {
             InitializeComponent();
             points = point;
+            this.price = price;
         }
         string connStr;
         SqlConnection conn;
@@ -37,15 +46,19 @@ namespace Kiosk_Management_System
                 MessageBox.Show("사용할 포인트를 입력하세요.");
             }
 
-            // 숫자만 사용됨.
             if(tb_usePoint.Text.Any(c => ! char.IsDigit(c)))
             {
                 MessageBox.Show("숫자만 입력해주세요.");
                 return;
             }
+            else if(points < 1000)
+            {
+                MessageBox.Show("포인트가 1000점 이상일 경우 사용 가능합니다.");
+                return;
+            }
             else
             {
-                // 보유 포인트보다 입력한 포인트가 더 많을 경우
+                // 입력된 텍스트보다 데이터베이스에서 불러온 텍스트보다 클 경우
                 if (string.Compare(tb_usePoint.Text, tb_point.Text) > 0)
                 {
                     MessageBox.Show("보유한 포인트를 초과하였습니다.");
@@ -53,7 +66,10 @@ namespace Kiosk_Management_System
                 }
                 else
                 {
-                    MessageBox.Show("포인트 사용이 완료되었습니다. 남은 포인트: " +points);
+                    price -= Int32.Parse(tb_usePoint.Text);
+                    points -= Int32.Parse(tb_usePoint.Text);
+                    MessageBox.Show("포인트 사용이 완료되었습니다. 남은 포인트: " + points + "남은 결제금액: " + price);
+
                     this.Close();
                 }
             }
@@ -74,7 +90,7 @@ namespace Kiosk_Management_System
             cmd = new SqlCommand();
             cmd.Connection = conn;
 
-            tb_point.Text = points;
+            tb_point.Text = points.ToString();
         }
 
         private void tb_point_TextChanged(object sender, EventArgs e)

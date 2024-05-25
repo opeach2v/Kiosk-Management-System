@@ -77,6 +77,12 @@
     <Compile Include="OptionPasswordForm.Designer.cs">
       <DependentUpon>OptionPasswordForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PaymentCashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentCashForm.Designer.cs">
+      <DependentUpon>PaymentCashForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PaymentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,12 @@
     </Compile>
     <Compile Include="PointForm.Designer.cs">
       <DependentUpon>PointForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PointInsertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PointInsertForm.Designer.cs">
+      <DependentUpon>PointInsertForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PointSelectForm.cs">
       <SubType>Form</SubType>
@@ -112,11 +124,17 @@
     <EmbeddedResource Include="OptionPasswordForm.resx">
       <DependentUpon>OptionPasswordForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PaymentCashForm.resx">
+      <DependentUpon>PaymentCashForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PaymentForm.resx">
       <DependentUpon>PaymentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PointForm.resx">
       <DependentUpon>PointForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PointInsertForm.resx">
+      <DependentUpon>PointInsertForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PointSelectForm.resx">
       <DependentUpon>PointSelectForm.cs</DependentUpon>

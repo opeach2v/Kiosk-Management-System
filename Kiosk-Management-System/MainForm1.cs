@@ -298,8 +298,9 @@ namespace Kiosk_Management_System
             {
                 string menuName = es_N.Text;
                 int number = count_total;
+                int price = price_total;
 
-                PaymentForm subFrom = new PaymentForm(menuName, number);
+                PaymentForm subFrom = new PaymentForm(menuName, number, price);
                 subFrom.ShowDialog();
             }
         }
