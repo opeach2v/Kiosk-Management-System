@@ -598,6 +598,7 @@
             this.es_N.Size = new System.Drawing.Size(75, 22);
             this.es_N.TabIndex = 1;
             this.es_N.Text = "에스프레소";
+            this.es_N.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // coffee_es
             // 

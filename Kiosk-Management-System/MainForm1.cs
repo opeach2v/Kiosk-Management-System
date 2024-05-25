@@ -64,6 +64,9 @@ namespace Kiosk_Management_System
         SqlCommand cmd;
         SqlDataReader reader;
 
+        // 메뉴 식별자와 관련 정보 Dictionary로 관리
+        private Dictionary<string, (string krName, string engName, int count, int price)> menuItems;
+
         public MainForm1()
         {
             connStr = "Server = localhost\\SQLEXPRESS;Database = CafeDB;Trusted_Connection = True;";
@@ -74,6 +77,8 @@ namespace Kiosk_Management_System
             cmd.Connection = conn;
 
             InitializeComponent();
+
+            InitializeMenuItems();
 
             // btnENG의 클릭 이벤트 핸들러를 설정
             this.btnENG.Click += new System.EventHandler(this.btnENG_Click);
@@ -87,6 +92,74 @@ namespace Kiosk_Management_System
             // UI의 총 수량 및 가격 레이블을 갱신하는 코드를 여기에 작성합니다.
             tb_num.Text = count_total.ToString();
             tb_amount.Text = price_total.ToString();
+        }
+
+        private void InitializeMenuItems()
+        {
+            menuItems = new Dictionary<string, (string, string, int, int)>
+        {
+            { "es", ("에스프레소", "Espresso", 0, 1300) },
+            { "ame", ("아메리카노", "Americano", 0, 1800) },
+            { "latte", ("카페라떼", "Cafe Latte", 0, 2800) },
+            { "capu", ("카푸치노", "Cappuccino", 0, 3000) },
+            { "macci", ("카라멜 마끼아또", "Caramel Macchiato", 0, 3200) },
+            { "vanila", ("바닐라 라떼", "Vanilla Latte", 0, 3400) },
+            { "moca", ("카페 모카", "Cafe Mocha", 0, 3600) },
+            { "icecream", ("아이스크림 라떼", "Ice Cream Latte", 0, 3800) },
+            { "choco", ("초코라떼", "Chocolate Latte", 0, 3000) },
+            { "green", ("녹차라떼", "Green Tea Latte", 0, 3200) },
+            { "lemon", ("레몬에이드", "Lemonade", 0, 3500) },
+            { "berry", ("딸기에이드", "Strawberry ade", 0, 3500) },
+            { "smoo_choco", ("초코스무디", "Chocolate Smoothie", 0, 4400) },
+            { "crof", ("크로플", "Croffle", 0, 2000) },
+            { "roll", ("생크림롤", "Cream Roll", 0, 4400) }
+        };
+
+            UpdateMenuTexts("KR");
+        }
+
+        private void UpdateMenuTexts(string language)
+        {
+            foreach (var menuItem in menuItems)
+            {
+                string name = language == "KR" ? menuItem.Value.krName : menuItem.Value.engName;
+                switch (menuItem.Key)
+                {
+                    case "es": es_N.Text = name; break;
+                    case "ame": ame_N.Text = name; break;
+                    case "latte": latte_N.Text = name; break;
+                    case "capu": Capu_N.Text = name; break;
+                    case "macci": macci_N.Text = name; break;
+                    case "vanila": vanila_N.Text = name; break;
+                    case "moca": moca_N.Text = name; break;
+                    case "icecream": icecream_N.Text = name; break;
+                    case "choco": choco_N.Text = name; break;
+                    case "green": green_N.Text = name; break;
+                    case "lemon": lemon_N.Text = name; break;
+                    case "berry": berry_N.Text = name; break;
+                    case "smoo_choco": smoo_choco_N.Text = name; break;
+                    case "crof": crof_N.Text = name; break;
+                    case "roll": roll_N.Text = name; break;
+                }
+            }
+
+            // Update button texts
+            order.Text = language == "KR" ? "구매목록" : "Order";
+            btn_partcancel.Text = language == "KR" ? "선택 취소" : "Part Cancel";
+            btn_cancel.Text = language == "KR" ? "전체 취소" : "Cancel";
+            btn_sell.Text = language == "KR" ? "결제하기" : "Pay";
+            total.Text = language == "KR" ? "수량" : "Total";
+            price.Text = language == "KR" ? "총액" : "Price";
+        }
+
+        private void btnKR_Click(object sender, EventArgs e)
+        {
+            UpdateMenuTexts("KR");
+        }
+
+        private void btnENG_Click(object sender, EventArgs e)
+        {
+            UpdateMenuTexts("ENG");
         }
 
         private void totalRefresh() // 수량, 총액 새로고침
@@ -131,7 +204,20 @@ namespace Kiosk_Management_System
             smoochoco_price = 0;
             crof_price = 0;
             roll_price = 0;
-    }
+        }
+
+        // 메뉴 이름에 해당하는 가격을 가져오는 메서드 (partcancel에서 호출)
+        private int GetPriceByName(string name)
+        {
+            foreach (var item in menuItems)
+            {
+                if (item.Value.krName == name || item.Value.engName == name)
+                {
+                    return item.Value.price;
+                }
+            }
+            return 0;
+        }
 
         private void btn_option_Click(object sender, EventArgs e)
         {
@@ -147,8 +233,6 @@ namespace Kiosk_Management_System
                 return;
             }
 
-
-
             for (int i = list_purchase.SelectedItems.Count - 1; i >= 0; i--)
             {
                 var selectedItem = list_purchase.SelectedItems[i];
@@ -163,67 +247,22 @@ namespace Kiosk_Management_System
                 price_total -= itemPrice * itemCount;
 
                 // 해당 메뉴의 수량을 감소시킴
-                switch (itemName)
+                foreach (var menuItem in menuItems)
                 {
-                    case "에스프레소":
-                        es_count -= itemCount; // 수량만큼 감소
+                    if (menuItem.Value.krName == itemName || menuItem.Value.engName == itemName)
+                    {
+                        var (krName, engName, count, price) = menuItem.Value;
+                        count -= itemCount;
+                        menuItems[menuItem.Key] = (krName, engName, count, price);
                         break;
-                    case "아메리카노":
-                        ame_count -= itemCount;
-                        break;
-                    case "카페라떼":
-                        latte_count -= itemCount;
-                        break;
-                    case "카푸치노":
-                        capu_count -= itemCount;
-                        break;
-                    case "카라멜 마끼아또":
-                        macci_count -= itemCount;
-                        break;
-                    case "바닐라 라떼":
-                        vanila_count -= itemCount;
-                        break;
-                    case "카페 모카":
-                        moca_count -= itemCount;
-                        break;
-                    case "아이스크림 라떼":
-                        icecream_count -= itemCount;
-                        break;
+                    }
                 }
 
                 list_purchase.Items.Remove(selectedItem);
-
             }
 
             // 수량과 총액을 새로고침
             totalRefresh();
-           
-        }
-
-        // 메뉴 이름에 해당하는 가격을 가져오는 메서드
-        private int GetPriceByName(string name)
-        {
-            switch (name)
-            {
-                case "에스프레소":
-                    return 1300;
-                case "아메리카노":
-                    return 1800;
-                case "카페라떼":
-                    return 2800;
-                case "카푸치노":
-                    return 3000;
-                case "카라멜 마끼아또":
-                    return 2800;
-                case "바닐라 라떼":
-                    return 2800;
-                case "카페 모카":
-                    return 2800;
-                case "아이스크림 라떼":
-                    return 2800;
-                default:
-                    return 0;
-            }
         }
 
         private void btn_cancel_Click(object sender, EventArgs e)
@@ -236,7 +275,7 @@ namespace Kiosk_Management_System
 
             else    // 리스트에 1개라도 있으면
             {
-                list_purchase.Items.Clear();  
+                list_purchase.Items.Clear();
                 count_total = 0;
                 price_total = 0;
                 totalRefresh();
@@ -254,7 +293,7 @@ namespace Kiosk_Management_System
                 MessageBox.Show("결제할 메뉴가 없습니다.");
                 return;
             }
-            
+
             else
             {
                 string menuName = es_N.Text;
@@ -265,13 +304,14 @@ namespace Kiosk_Management_System
             }
         }
 
-        // 모든 메뉴들 공통 함수
+        // 모든 메뉴들 공통(아이템 추가) 함수
         private void AddMenuItem(string name, string priceText, int price)
         {
             bool itemExists = false;
             foreach (var item in list_purchase.Items)
             {
                 string itemName = item.ToString().Split('x')[0].Trim(); // 항목의 이름 추출
+
                 if (itemName == name) // 이미 있는 항목인 경우
                 {
                     int index = list_purchase.Items.IndexOf(item);
@@ -302,40 +342,87 @@ namespace Kiosk_Management_System
             // 주문된 커피의 개수와 총 가격을 텍스트 상자에 업데이트
             tb_num.Text = count_total.ToString(); // 모든 메뉴의 총 개수를 표시
             tb_amount.Text = price_total.ToString();
+
+            // SQL 쿼리 실행 및 수량 제한 체크
+            CheckMenuLimit(name, price);
         }
 
-        private void IncreaseItemCount(string itemName) // 카운트 증가
+        private void CheckMenuLimit(string name, int price)
+        {
+            cmd.CommandText = "SELECT num FROM coffeeMenu WHERE name = '" + name + "'";
+            reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                limit = reader.GetInt32(0); // DB에 저장된 메뉴의 개수 읽어옴
+            }
+
+            // 각 메뉴의 수량 변수를 읽기 위해 필요한 변수
+            int itemCount = 0;
+            switch (name)
+            {
+                case "에스프레소":
+                case "Espresso":
+                    itemCount = es_count;
+                    break;
+                case "아메리카노":
+                case "Americano":
+                    itemCount = ame_count;
+                    break;
+                case "카페라떼":
+                case "Cafe Latte":
+                    itemCount = latte_count;
+                    break;
+                case "카푸치노":
+                case "Cappuccino":
+                    itemCount = capu_count;
+                    break;
+                case "카라멜 마끼아또":
+                case "Caramel Macchiato":
+                    itemCount = macci_count;
+                    break;
+                case "바닐라 라떼":
+                case "Vanilla Latte":
+                    itemCount = vanila_count;
+                    break;
+                case "카페 모카":
+                case "Cafe Mocha":
+                    itemCount = moca_count;
+                    break;
+                case "아이스크림 라떼":
+                case "Ice Cream Latte":
+                    itemCount = icecream_count;
+                    break;
+            }
+
+            if (limit < itemCount)
+            {
+                itemCount = limit;
+                MessageBox.Show("정해진 수량을 초과했습니다. " + itemCount);
+                count_total--;
+                tb_num.Text = count_total.ToString();
+                price_total -= price;
+                tb_amount.Text = price_total.ToString();
+                overflow(name); // overflow 호출
+            }
+            reader.Close();
+        }
+
+        private void IncreaseItemCount(string itemName) // 카운트 증가, 버튼 클릭시 AddMenuItem함수에서 호출
         {
             switch (itemName)
             {
-                case "에스프레소":
-                    es_count++;
-                    break;
-                case "아메리카노":
-                    ame_count++;
-                    break;
-                case "카페라떼":
-                    latte_count++;
-                    break;
-                case "카푸치노":
-                    capu_count++;
-                    break;
-                case "카라멜 마끼아또":
-                    macci_count++;
-                    break;
-                case "바닐라 라떼":
-                    vanila_count++;
-                    break;
-                case "카페 모카":
-                    moca_count++;
-                    break;
-                case "아이스크림 라떼":
-                    icecream_count++;
-                    break;
+                case "에스프레소": es_count++; break;
+                case "아메리카노": ame_count++; break;
+                case "카페라떼": latte_count++; break;
+                case "카푸치노": capu_count++; break;
+                case "카라멜 마끼아또": macci_count++; break;
+                case "바닐라 라떼": vanila_count++; break;
+                case "카페 모카": moca_count++; break;
+                case "아이스크림 라떼": icecream_count++; break;
             }
         }
 
-        private void overflow(string name) // DB에 저장된 개수 초과 시 호출
+        private void overflow(string name) // DB에 저장된 개수 초과 시 AddMenuItem함수에서 호출
         {
             foreach (var item in list_purchase.Items)
             {
@@ -352,202 +439,46 @@ namespace Kiosk_Management_System
             }
         }
 
-        // 커피 메뉴
-        private void coffee_es_Click(object sender, EventArgs e) // 버튼 클릭 이벤트
+        private void coffee_es_Click(object sender, EventArgs e)
         {
             AddMenuItem(es_N.Text, es_P.Text, 1300); // AddMenuItem 호출 매개변수는 각 메뉴 이름, 가격
-            
-            cmd.CommandText = "SELECT num FROM coffeeMenu WHERE name = '" +es_N.Text+"'";
-            reader = cmd.ExecuteReader();
-            if(reader.Read())
-            {
-                limit = reader.GetInt32(0); // DB에 저장된 메뉴의 개수 읽어옴
-            }
-
-            if(limit < es_count)
-            {
-                es_count = limit;
-                MessageBox.Show("정해진 수량을 초과했습니다." +es_count);
-                count_total--; 
-                tb_num.Text = count_total.ToString();
-                price_total = price_total - 1300;
-                tb_amount.Text = price_total.ToString();
-                overflow(es_N.Text); // overflow 호출
-            }
-            reader.Close();
-            
         }
+
         private void coffee_ame_Click(object sender, EventArgs e)
         {
             AddMenuItem(ame_N.Text, ame_P.Text, 1800);
-
-            cmd.CommandText = "SELECT num FROM coffeeMenu WHERE name = '" + ame_N.Text + "'";
-            reader = cmd.ExecuteReader();
-            if (reader.Read())
-            {
-                limit = reader.GetInt32(0);
-            }
-
-            if (limit < ame_count)
-            {
-                ame_count = limit;
-                MessageBox.Show("정해진 수량을 초과했습니다." + ame_count);
-                count_total--;
-                tb_num.Text = count_total.ToString();
-                price_total = price_total - 1800;
-                tb_amount.Text = price_total.ToString();
-                overflow(ame_N.Text);
-            }
-            reader.Close();
-
-
         }
 
         private void coffee_latte_Click(object sender, EventArgs e)
         {
             AddMenuItem(latte_N.Text, latte_P.Text, 2800);
-
-            cmd.CommandText = "SELECT num FROM coffeeMenu WHERE name = '" + latte_N.Text + "'";
-            reader = cmd.ExecuteReader();
-            if (reader.Read())
-            {
-                limit = reader.GetInt32(0);
-            }
-
-            if (limit < latte_count)
-            {
-                latte_count = limit;
-                MessageBox.Show("정해진 수량을 초과했습니다." + latte_count);
-                count_total--;
-                tb_num.Text = count_total.ToString();
-                price_total = price_total - 2800;
-                tb_amount.Text = price_total.ToString();
-                overflow(latte_N.Text);
-            }
-            reader.Close();
         }
 
         private void coffee_Capu_Click(object sender, EventArgs e)
         {
             AddMenuItem(Capu_N.Text, Capu_P.Text, 3000);
-
-            cmd.CommandText = "SELECT num FROM coffeeMenu WHERE name = '" + Capu_N.Text + "'";
-            reader = cmd.ExecuteReader();
-            if (reader.Read())
-            {
-                limit = reader.GetInt32(0);
-            }
-
-            if (limit < capu_count)
-            {
-                capu_count = limit;
-                MessageBox.Show("정해진 수량을 초과했습니다." + capu_count);
-                count_total--;
-                tb_num.Text = count_total.ToString();
-                price_total = price_total - 3000;
-                tb_amount.Text = price_total.ToString();
-                overflow(Capu_N.Text);
-            }
-            reader.Close();
         }
 
         private void coffee_macci_Click(object sender, EventArgs e)
         {
             AddMenuItem(macci_N.Text, macci_P.Text, 3200);
-
-            cmd.CommandText = "SELECT num FROM coffeeMenu WHERE name = '" + macci_N.Text + "'";
-            reader = cmd.ExecuteReader();
-            if (reader.Read())
-            {
-                limit = reader.GetInt32(0);
-            }
-
-            if (limit < macci_count)
-            {
-                macci_count = limit;
-                MessageBox.Show("정해진 수량을 초과했습니다." + macci_count);
-                count_total--;
-                tb_num.Text = count_total.ToString();
-                price_total = price_total - 3200;
-                tb_amount.Text = price_total.ToString();
-                overflow(macci_N.Text);
-            }
-            reader.Close();
         }
 
         private void coffee_vanila_Click(object sender, EventArgs e)
         {
             AddMenuItem(vanila_N.Text, vanila_P.Text, 3400);
-
-            cmd.CommandText = "SELECT num FROM coffeeMenu WHERE name = '" + vanila_N.Text + "'";
-            reader = cmd.ExecuteReader();
-            if (reader.Read())
-            {
-                limit = reader.GetInt32(0);
-            }
-
-            if (limit < vanila_count)
-            {
-                vanila_count = limit;
-                MessageBox.Show("정해진 수량을 초과했습니다." + vanila_count);
-                count_total--;
-                tb_num.Text = count_total.ToString();
-                price_total = price_total - 3400;
-                tb_amount.Text = price_total.ToString();
-                overflow(vanila_N.Text);
-            }
-            reader.Close();
         }
 
         private void coffee_moca_Click(object sender, EventArgs e)
         {
             AddMenuItem(moca_N.Text, moca_P.Text, 3600);
-
-            cmd.CommandText = "SELECT num FROM coffeeMenu WHERE name = '" + moca_N.Text + "'";
-            reader = cmd.ExecuteReader();
-            if (reader.Read())
-            {
-                limit = reader.GetInt32(0);
-            }
-
-            if (limit < moca_count)
-            {
-                moca_count = limit;
-                MessageBox.Show("정해진 수량을 초과했습니다." + moca_count);
-                count_total--;
-                tb_num.Text = count_total.ToString();
-                price_total = price_total - 3600;
-                tb_amount.Text = price_total.ToString();
-                overflow(moca_N.Text);
-            }
-            reader.Close();
         }
 
         private void coffee_icecream_Click(object sender, EventArgs e)
         {
             AddMenuItem(icecream_N.Text, icecream_P.Text, 3800);
-
-            cmd.CommandText = "SELECT num FROM coffeeMenu WHERE name = '" + icecream_N.Text + "'";
-            reader = cmd.ExecuteReader();
-            if (reader.Read())
-            {
-                limit = reader.GetInt32(0);
-            }
-
-            if (limit < icecream_count)
-            {
-                icecream_count = limit;
-                MessageBox.Show("정해진 수량을 초과했습니다." + icecream_count);
-                count_total--;
-                tb_num.Text = count_total.ToString();
-                price_total = price_total - 3800;
-                tb_amount.Text = price_total.ToString();
-                overflow(icecream_N.Text);
-            }
-            reader.Close();
         }
 
-        // 논커피 메뉴
         private void non_choco_Click(object sender, EventArgs e)
         {
             AddMenuItem(choco_N.Text, choco_P.Text, 3000);
@@ -558,7 +489,6 @@ namespace Kiosk_Management_System
             AddMenuItem(green_N.Text, green_P.Text, 3200);
         }
 
-        // 에이드 메뉴
         private void ade_lemon_Click(object sender, EventArgs e)
         {
             AddMenuItem(lemon_N.Text, lemon_P.Text, 3500);
@@ -569,13 +499,11 @@ namespace Kiosk_Management_System
             AddMenuItem(berry_N.Text, berry_P.Text, 3500);
         }
 
-        // 스무디 메뉴
         private void smoo_choco_Click_1(object sender, EventArgs e)
         {
             AddMenuItem(smoo_choco_N.Text, smoo_choco_P.Text, 4400);
         }
 
-        // 디저트 메뉴
         private void dessert_crof_Click(object sender, EventArgs e)
         {
             AddMenuItem(crof_N.Text, crof_P.Text, 2000);
@@ -595,56 +523,6 @@ namespace Kiosk_Management_System
         private void tb_amount_TextChanged(object sender, EventArgs e)
         {
             // 사용 xxxxx
-        }
-
-        private void btnKR_Click(object sender, EventArgs e)
-        {
-            es_N.Text = "에스프레소";
-            ame_N.Text = "아메리카노";
-            latte_N.Text = "카페 라떼";
-            Capu_N.Text = "카푸치노";
-            macci_N.Text = "카라멜 마끼아또";
-            vanila_N.Text = "바닐라 라뗴";
-            moca_N.Text = "카페 모카";
-            icecream_N.Text = "아이스크림 라뗴";
-            choco_N.Text = "초코라뗴";
-            green_N.Text = "녹차라뗴";
-            lemon_N.Text = "레몬에이드";
-            berry_N.Text = "딸기에이드";
-            smoo_choco_N.Text = "초코스무디";
-            crof_N.Text = "크로플";
-            roll_N.Text = "생크림롤";
-            order.Text = "구매목록";
-            btn_partcancel.Text = "선택 취소";
-            btn_cancel.Text = "전체 취소";
-            btn_sell.Text = "결제하기";
-            total.Text = "수량";
-            price.Text = "총액";
-        }
-
-        private void btnENG_Click(object sender, EventArgs e)
-        {
-            es_N.Text = "Espresso";
-            ame_N.Text = "Americano";
-            latte_N.Text = "Cafe Latte";
-            Capu_N.Text = "Cappuccino";
-            macci_N.Text = "Caramel Macchiato";
-            vanila_N.Text = "Vanilla Latte";
-            moca_N.Text = "Cafe Mocha";
-            icecream_N.Text = "Ice Cream Latte";
-            choco_N.Text = "Chocolate Latte";
-            green_N.Text = "Green Tea Latte";
-            lemon_N.Text = "Lemonade";
-            berry_N.Text = "Strawberry ade";
-            smoo_choco_N.Text = "Chocolate Smoothie";
-            crof_N.Text = "Croffle";
-            roll_N.Text = "Cream Roll";
-            order.Text = "Order";
-            btn_partcancel.Text = "partcancel";
-            btn_cancel.Text = "Cancel";
-            btn_sell.Text = "Pay";
-            total.Text = "Total";
-            price.Text = "Price";
         }
     }
 }
