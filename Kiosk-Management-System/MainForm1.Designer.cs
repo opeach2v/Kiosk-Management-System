@@ -102,11 +102,13 @@
             this.crof_N = new System.Windows.Forms.Label();
             this.dessert_crof = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.order = new System.Windows.Forms.Label();
+            this.total = new System.Windows.Forms.Label();
+            this.price = new System.Windows.Forms.Label();
             this.btn_option = new System.Windows.Forms.Button();
             this.list_purchase = new System.Windows.Forms.ListBox();
+            this.btnKR = new System.Windows.Forms.Button();
+            this.btnENG = new System.Windows.Forms.Button();
             this.bttab.SuspendLayout();
             this.tab_coffee.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -175,7 +177,7 @@
             this.tb_amount.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_amount.Cursor = System.Windows.Forms.Cursors.Default;
             this.tb_amount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tb_amount.Location = new System.Drawing.Point(356, 903);
+            this.tb_amount.Location = new System.Drawing.Point(355, 906);
             this.tb_amount.Name = "tb_amount";
             this.tb_amount.ReadOnly = true;
             this.tb_amount.Size = new System.Drawing.Size(149, 23);
@@ -426,7 +428,7 @@
             this.coffee_macci.BackColor = System.Drawing.Color.Gainsboro;
             this.coffee_macci.Cursor = System.Windows.Forms.Cursors.Hand;
             this.coffee_macci.Dock = System.Windows.Forms.DockStyle.Top;
-            this.coffee_macci.Image = global::Kiosk_Management_System.Properties.Resources.카라멜마끼아또;
+            this.coffee_macci.Image = ((System.Drawing.Image)(resources.GetObject("coffee_macci.Image")));
             this.coffee_macci.Location = new System.Drawing.Point(0, 0);
             this.coffee_macci.Name = "coffee_macci";
             this.coffee_macci.Size = new System.Drawing.Size(170, 127);
@@ -470,7 +472,7 @@
             this.coffee_Capu.BackColor = System.Drawing.Color.Gainsboro;
             this.coffee_Capu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.coffee_Capu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.coffee_Capu.Image = global::Kiosk_Management_System.Properties.Resources.카푸치노;
+            this.coffee_Capu.Image = ((System.Drawing.Image)(resources.GetObject("coffee_Capu.Image")));
             this.coffee_Capu.Location = new System.Drawing.Point(0, 0);
             this.coffee_Capu.Name = "coffee_Capu";
             this.coffee_Capu.Size = new System.Drawing.Size(170, 127);
@@ -514,7 +516,7 @@
             this.coffee_latte.BackColor = System.Drawing.Color.Gainsboro;
             this.coffee_latte.Cursor = System.Windows.Forms.Cursors.Hand;
             this.coffee_latte.Dock = System.Windows.Forms.DockStyle.Top;
-            this.coffee_latte.Image = global::Kiosk_Management_System.Properties.Resources.카페라떼;
+            this.coffee_latte.Image = ((System.Drawing.Image)(resources.GetObject("coffee_latte.Image")));
             this.coffee_latte.Location = new System.Drawing.Point(0, 0);
             this.coffee_latte.Name = "coffee_latte";
             this.coffee_latte.Size = new System.Drawing.Size(170, 127);
@@ -955,48 +957,48 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("나눔스퀘어 네오 ExtraBold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 25);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(22, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(183, 25);
+            this.label1.Size = new System.Drawing.Size(154, 25);
             this.label1.TabIndex = 19;
             this.label1.Text = "2 CAFE 경남대점";
             // 
-            // label2
+            // order
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(12, 671);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 25);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "구매내역";
+            this.order.AutoSize = true;
+            this.order.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.order.Location = new System.Drawing.Point(12, 671);
+            this.order.Name = "order";
+            this.order.Size = new System.Drawing.Size(72, 25);
+            this.order.TabIndex = 20;
+            this.order.Text = "구매내역";
             // 
-            // label3
+            // total
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(42, 903);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 25);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "수량";
+            this.total.AutoSize = true;
+            this.total.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.total.Location = new System.Drawing.Point(32, 906);
+            this.total.Name = "total";
+            this.total.Size = new System.Drawing.Size(42, 25);
+            this.total.TabIndex = 21;
+            this.total.Text = "수량";
             // 
-            // label4
+            // price
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(295, 903);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 25);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "총액";
+            this.price.AutoSize = true;
+            this.price.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.price.Location = new System.Drawing.Point(297, 907);
+            this.price.Name = "price";
+            this.price.Size = new System.Drawing.Size(42, 25);
+            this.price.TabIndex = 21;
+            this.price.Text = "총액";
             // 
             // btn_option
             // 
             this.btn_option.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_option.Image = global::Kiosk_Management_System.Properties.Resources.설정1;
-            this.btn_option.Location = new System.Drawing.Point(534, 15);
+            this.btn_option.Location = new System.Drawing.Point(519, 14);
             this.btn_option.Name = "btn_option";
             this.btn_option.Size = new System.Drawing.Size(35, 35);
             this.btn_option.TabIndex = 6;
@@ -1009,8 +1011,30 @@
             this.list_purchase.ItemHeight = 25;
             this.list_purchase.Location = new System.Drawing.Point(17, 708);
             this.list_purchase.Name = "list_purchase";
-            this.list_purchase.Size = new System.Drawing.Size(431, 179);
+            this.list_purchase.Size = new System.Drawing.Size(431, 154);
             this.list_purchase.TabIndex = 22;
+            // 
+            // btnKR
+            // 
+            this.btnKR.BackColor = System.Drawing.Color.Transparent;
+            this.btnKR.Location = new System.Drawing.Point(320, 22);
+            this.btnKR.Name = "btnKR";
+            this.btnKR.Size = new System.Drawing.Size(75, 23);
+            this.btnKR.TabIndex = 33;
+            this.btnKR.Text = "KR";
+            this.btnKR.UseVisualStyleBackColor = false;
+            this.btnKR.Click += new System.EventHandler(this.btnKR_Click);
+            // 
+            // btnENG
+            // 
+            this.btnENG.BackColor = System.Drawing.Color.Transparent;
+            this.btnENG.Location = new System.Drawing.Point(415, 22);
+            this.btnENG.Name = "btnENG";
+            this.btnENG.Size = new System.Drawing.Size(75, 23);
+            this.btnENG.TabIndex = 34;
+            this.btnENG.Text = "ENG";
+            this.btnENG.UseVisualStyleBackColor = false;
+            this.btnENG.Click += new System.EventHandler(this.btnENG_Click);
             // 
             // MainForm1
             // 
@@ -1019,10 +1043,12 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.PeachPuff;
             this.ClientSize = new System.Drawing.Size(594, 944);
+            this.Controls.Add(this.btnKR);
+            this.Controls.Add(this.btnENG);
             this.Controls.Add(this.list_purchase);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.price);
+            this.Controls.Add(this.total);
+            this.Controls.Add(this.order);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bttab);
             this.Controls.Add(this.btn_partcancel);
@@ -1107,9 +1133,9 @@
         private System.Windows.Forms.TabPage tab_desert;
         private System.Windows.Forms.TabPage tab_noncoffee;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label order;
+        private System.Windows.Forms.Label total;
+        private System.Windows.Forms.Label price;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label es_P;
         private System.Windows.Forms.Label es_N;
@@ -1171,6 +1197,8 @@
         private System.Windows.Forms.Label crof_N;
         private System.Windows.Forms.PictureBox dessert_crof;
         private System.Windows.Forms.ListBox list_purchase;
+        private System.Windows.Forms.Button btnKR;
+        private System.Windows.Forms.Button btnENG;
     }
 }
 
