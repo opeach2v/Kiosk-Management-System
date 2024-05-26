@@ -74,7 +74,6 @@ namespace Kiosk_Management_System
                 MessageBox.Show("정상적으로 조회되었습니다.");
                 PointSelectForm subForm = new PointSelectForm(point, price);
                 subForm.ShowDialog();
-                price = PointSelectForm.Price;  // PointSelectForm에서 포인트 차감 후 남은 결제액을 가져와야 하는데...오류 발생
                 this.Close();
             }
 

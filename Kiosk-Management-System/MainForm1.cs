@@ -20,7 +20,6 @@ namespace Kiosk_Management_System
     {
         int limit = 0;
 
-        private bool isFirstClick = true;
         // 메뉴 전체 카운트
         int count_total = 0;
         int price_total = 0;
@@ -281,7 +280,6 @@ namespace Kiosk_Management_System
                 totalRefresh();
                 countReset();
                 priceReset();
-                isFirstClick = true;
                 totalRefresh();
             }
         }
