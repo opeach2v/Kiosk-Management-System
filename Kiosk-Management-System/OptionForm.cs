@@ -239,5 +239,48 @@ namespace Kiosk_Management_System
         {
             conn.Close();
         }
+
+        private void btn_salesSelect_Click(object sender, EventArgs e)
+        {
+            list_option.Columns.Clear();
+
+            list_option.View = View.Details;
+            list_option.GridLines = true;
+            int listWidth = list_option.Width;
+            list_option.Columns.Add("이름", (int)(listWidth * 0.3));
+            list_option.Columns.Add("판매 수량", (int)(listWidth * 0.2));
+            list_option.Columns.Add("수입", (int)(listWidth * 0.2));
+            list_option.Columns.Add("결제 방식", (int)(listWidth * 0.3));
+
+            string data1, data2, data3, data4;
+
+            cmd.CommandText = "SELECT * FROM sales";
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            list_option.Items.Clear();
+            ListViewItem item;
+            while (reader.Read())
+            {
+                data1 = reader.GetString(0);
+                data2 = reader.GetInt32(1).ToString();
+                data3 = reader.GetInt32(2).ToString();
+                data4 = reader.GetString(3);
+
+                item = new ListViewItem(data1);
+                item.SubItems.Add(data2);
+                item.SubItems.Add(data3);
+                item.SubItems.Add(data4);
+
+                list_option.Items.Add(item);
+            }
+            reader.Close();
+        }
+
+        private void btn_drinkUpdate_Click(object sender, EventArgs e)
+        {
+            UpdateDrinkForm subFrom = new UpdateDrinkForm();
+            subFrom.ShowDialog();
+            return;
+        }
     }
 }

@@ -25,12 +25,17 @@ namespace Kiosk_Management_System
             this.price = price;
         }
 
-        // 나머지 결제 버튼은 작동x
+        //PointForm에서 받아온 price(포인트 차감 후 남은 결제액)로 결제금액 변경
+        public void SetPrice(int newPrice)
+        {
+            price = newPrice;
+        }
+
         private void btn_point_Click(object sender, EventArgs e)
         {
-            PointForm subFrom = new PointForm(price);
-            subFrom.ShowDialog();
-            this.Close();   //사용자가 폼을 닫을 때까지 이전 폼에 접근하지 못함.
+            PointForm subForm = new PointForm(price);
+            subForm.ShowDialog();
+            SetPrice(subForm.Price);  // PointSelectForm에서 포인트 차감 후 남은 결제액을 가져옴
         }
 
         private void btn_cash_Click(object sender, EventArgs e)

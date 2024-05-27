@@ -16,6 +16,13 @@ namespace Kiosk_Management_System
     {
         int point;
         int price;
+        string telnum;
+
+        public int Price // 이전 창으로 포인트 차감 후 남은 결제액 전달
+        {
+            get { return price; }
+            set { price = value; }
+        }
 
         string connStr;
         SqlConnection conn;
@@ -71,9 +78,12 @@ namespace Kiosk_Management_System
                 cmd.CommandText = "SELECT point FROM customer WHERE telnum = @telnum";
                 int point = (int)cmd.ExecuteScalar();
 
+                telnum = tb_telnum.Text;
+
                 MessageBox.Show("정상적으로 조회되었습니다.");
-                PointSelectForm subForm = new PointSelectForm(point, price);
+                PointSelectForm subForm = new PointSelectForm(telnum, point, price);
                 subForm.ShowDialog();
+                price = subForm.Price;  // PointSelectForm에서 포인트 차감 후 남은 결제액을 가져옴
                 this.Close();
             }
 

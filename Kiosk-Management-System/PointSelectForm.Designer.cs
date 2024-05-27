@@ -73,7 +73,7 @@
             // 
             this.btn_cancel.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btn_cancel.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btn_cancel.Location = new System.Drawing.Point(309, 275);
+            this.btn_cancel.Location = new System.Drawing.Point(307, 259);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(118, 38);
             this.btn_cancel.TabIndex = 8;
@@ -85,7 +85,7 @@
             // 
             this.btn_use.BackColor = System.Drawing.Color.LightSalmon;
             this.btn_use.Font = new System.Drawing.Font("나눔스퀘어 네오 Bold", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btn_use.Location = new System.Drawing.Point(144, 275);
+            this.btn_use.Location = new System.Drawing.Point(142, 259);
             this.btn_use.Name = "btn_use";
             this.btn_use.Size = new System.Drawing.Size(118, 38);
             this.btn_use.TabIndex = 8;
@@ -117,7 +117,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(578, 370);
+            this.ClientSize = new System.Drawing.Size(578, 346);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tb_usePoint);
             this.Controls.Add(this.btn_use);

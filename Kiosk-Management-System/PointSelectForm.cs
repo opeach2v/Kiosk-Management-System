@@ -13,18 +13,20 @@ namespace Kiosk_Management_System
 {
     public partial class PointSelectForm : Form
     {
+        string telnum;
         int points;
         private int price;
 
-        public int Price // 이전 창으로 포인트 차감 후 남은 결제액 전달...인데 PointForm에서 오류 발생
+        public int Price // 이전 창으로 포인트 차감 후 남은 결제액 전달
         {
             get { return price; }
             set { price = value; }
         }
 
-        public PointSelectForm(int point, int price)
+        public PointSelectForm(string telnum, int point, int price)
         {
             InitializeComponent();
+            this.telnum = telnum;
             points = point;
             this.price = price;
         }
@@ -69,6 +71,9 @@ namespace Kiosk_Management_System
                     price -= Int32.Parse(tb_usePoint.Text);
                     points -= Int32.Parse(tb_usePoint.Text);
                     MessageBox.Show("포인트 사용이 완료되었습니다. 남은 포인트: " + points + "남은 결제금액: " + price);
+
+                    cmd.CommandText = "UPDATE customer SET point =" +  points + "WHERE telnum =" + telnum +"";
+                    cmd.ExecuteNonQuery();
 
                     this.Close();
                 }

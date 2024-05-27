@@ -58,8 +58,9 @@ namespace Kiosk_Management_System
             {
                 // 입력한 번호가 데이터베이스에 존재할 때 포인트 적립
                 cmd.CommandText = "SELECT point FROM customer WHERE telnum = @telnum";
-                double point = (double)cmd.ExecuteScalar();
-                point += amount*0.1;
+                int point = (int)cmd.ExecuteScalar();
+
+                point = (int)(point + amount*0.1);
                 cmd.CommandText = "UPDATE customer SET point =" + point + "WHERE telnum = @telnum";
                 cmd.ExecuteNonQuery();
 

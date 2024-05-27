@@ -16,31 +16,31 @@ namespace Kiosk_Management_System
     {
         string menuName;
         int count;
-        int amount;
+        int price;
 
         string connStr;
         SqlConnection conn;
         SqlCommand cmd;
         SqlDataReader reader;
 
-        public PaymentCashForm(string menuName, int number, int totalPrice)
+        public PaymentCashForm(string menuName, int number, int price)
         {
             InitializeComponent();
             this.menuName = menuName;
             count = number;
-            amount = totalPrice;
+            this.price = price;
         }
 
         private void PaymentCashForm_Load(object sender, EventArgs e)
         {
-            tb_amount.Text = amount.ToString();
+            tb_amount.Text = price.ToString();
         }
 
         private void btn_ok_Click(object sender, EventArgs e)
         {
             // 거스름돈 계산
             string receiveAmount = tb_receiveAmount.Text;
-            int change = Int32.Parse(receiveAmount) - amount;
+            int change = Int32.Parse(receiveAmount) - price;
             tb_change.Text = change.ToString();
 
             connStr = "Server=localhost\\SQLEXPRESS;Database=CafeDB;Trusted_Connection=True;";
@@ -54,13 +54,18 @@ namespace Kiosk_Management_System
             cmd.CommandText = "SELECT num FROM coffeeMenu WHERE name = @menuName";
             cmd.Parameters.AddWithValue("@menuName", menuName);
             int num = (int)cmd.ExecuteScalar();
-            num = num - amount;
+            num = num - count;
 
             cmd.CommandText = "UPDATE coffeeMenu SET num = @num WHERE name = @menuName";
             cmd.Parameters.AddWithValue("@num", num);
             cmd.ExecuteNonQuery();
 
-            PointInsertForm subFrom = new PointInsertForm(amount);
+            cmd.CommandText = "INSERT INTO sales VALUES(@menuName, @count, @price, '현금')";
+            cmd.Parameters.AddWithValue("@count", count);
+            cmd.Parameters.AddWithValue("@price", price);
+            cmd.ExecuteNonQuery();
+
+            PointInsertForm subFrom = new PointInsertForm(price);
             subFrom.ShowDialog();
         }
     }
