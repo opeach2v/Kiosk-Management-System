@@ -84,12 +84,16 @@
 @@@ OptionForm @@@
 *음료*
 음료 조회 버튼 btn_drinkSelect
+음료 변경 버튼 btn_dringUpdate
 음료 추가 버튼 btn_drinkInsert
 음료 삭제 버튼 btn_drinkDelete
 
 *회원*
 회원 조회 버튼 btn_cusSelect
 회원 삭제 버튼 btn_cusDelete
+
+*매출*
+매출 조회 버튼 btn_salesSelect
 
 리스트 list_option
 
@@ -101,4 +105,13 @@
 갯수 텍박 tb_count
 가격 텍박 tb_price
 추가 버튼 btn_insert
+취소 버튼 btn_cancel
+
+
+@@@ UpdateDrinkForm @@@
+종류 콤보박스 cb_category
+이름 텍박 tb_name
+갯수 텍박 tb_count
+가격 텍박 tb_price
+추가 버튼 btn_update
 취소 버튼 btn_cancel
